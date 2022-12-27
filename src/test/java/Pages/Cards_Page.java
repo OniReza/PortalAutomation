@@ -13,7 +13,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-
 public class Cards_Page extends CommonPageMethods {
     public static WebDriver driver;
 
@@ -136,13 +135,11 @@ public class Cards_Page extends CommonPageMethods {
 
     public void statementTabClick() {
             click(statementTab);
-
     }
 
     public boolean availableStatement() {
         return downloadBtn.isDisplayed();
     }
-
     public void statementDownloadClick() {
         downloadBtn.sendKeys(Keys.PAGE_DOWN);
         click(downloadBtn);

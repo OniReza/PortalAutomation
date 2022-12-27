@@ -72,7 +72,6 @@ public class Cards_Step {
         catch(Exception e) {
             cardspage.cardsMenuClick();
         }
-
     }
 
     @Then("a statement will be downloaded")
