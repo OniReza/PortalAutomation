@@ -20,7 +20,9 @@ public class Cards_Step {
         cardspage = new Cards_Page(driver);
     }
 
-    @And("user clicks on cards on side menu")
+
+
+    @When("user clicks on cards on side menu")
     public void user_clicks_on_Cards_on_side_menu() throws InterruptedException {
 
         try {
@@ -41,7 +43,7 @@ public class Cards_Step {
         System.out.println("Physical card appeared");
     }
 
-    @When("user clicks on physical card")
+    @And("user clicks on physical card")
     public void user_clicks_on_physical_card() throws InterruptedException {
         smartWait.waitUntilPageIsLoaded(10);
         cardspage.physicalCardClick();
@@ -109,28 +111,28 @@ public class Cards_Step {
         Thread.sleep(2000);
     }
 
-    @When("user enters amount to load")
+    @And("user enters amount to load")
     public void user_enters_amount_to_load() throws InterruptedException {
         smartWait.waitUntilPageIsLoaded(10);
         cardspage.enterLoadAmount();
         smartWait.waitUntilPageIsLoaded(5);
     }
 
-    @When("user checks overview")
+    @And("user checks overview")
     public void user_checks_overview() throws InterruptedException {
         smartWait.waitUntilPageIsLoaded(10);
         Assert.assertTrue("Overview didn't appeared", cardspage.overviewCheck());
         Thread.sleep(2000);
     }
 
-    @When("user clicks confirm button")
+    @And("user clicks confirm button")
     public void user_clicks_confirm_button() throws InterruptedException {
         smartWait.waitUntilPageIsLoaded(10);
         cardspage.confirmBtnClick();
         Thread.sleep(2000);
     }
 
-    @When("user provides otp and clicks confirm button again")
+    @And("user provides otp and clicks confirm button again")
     public void user_provides_otp_and_clicks_confirm_button_again() throws InterruptedException {
         smartWait.waitUntilPageIsLoaded(10);
         cardspage.enterOtp();
@@ -139,7 +141,7 @@ public class Cards_Step {
         smartWait.waitUntilPageIsLoaded(5);
     }
 
-    @When("user checks success message and press ok button")
+    @And("user checks success message and press ok button")
     public void user_checks_success_message_and_press_ok_button() throws InterruptedException {
         smartWait.waitUntilPageIsLoaded(10);
         Assert.assertTrue("Load unSuccessful", cardspage.sucessMsgCheck());

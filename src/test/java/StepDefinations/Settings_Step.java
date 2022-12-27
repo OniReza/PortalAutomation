@@ -4,18 +4,21 @@ import Pages.Accounts_Page;
 import Pages.Settings_Page;
 import Utility.Hooks;
 import Utility.SmartWait;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.*;
 import io.cucumber.java.en_scouse.An;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.security.PublicKey;
 import java.util.concurrent.TimeUnit;
+
+import static org.openqa.selenium.OutputType.BYTES;
 
 public class Settings_Step {
     public WebDriver driver;
@@ -28,6 +31,17 @@ public class Settings_Step {
         settingsPage= new Settings_Page(driver);
     }
 
+    @After
+    public void takeScraenshotOnFailure(Scenario scenario) {
+
+        if (scenario.isFailed()) {
+
+            TakesScreenshot ts = (TakesScreenshot) driver;
+            byte[] src = ts.getScreenshotAs(OutputType.BYTES);
+            scenario.attach(src, "image/png", "screenshot");
+        }
+
+    }
 
 
     @When("user clicks on settings button")

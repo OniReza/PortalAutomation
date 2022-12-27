@@ -11,6 +11,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.openqa.selenium.OutputType.BYTES;
+
 public class Hooks {
     private static WebDriver driver;
 
@@ -31,6 +33,20 @@ public class Hooks {
 
         return driver;
     }
+
+    @After(order = 1)
+    public void takeScraenshotOnFailure(Scenario scenario) {
+
+        if (scenario.isFailed()) {
+
+            TakesScreenshot ts = (TakesScreenshot) driver;
+
+            byte[] src = ts.getScreenshotAs(BYTES);
+            scenario.attach(src, "image/png", "screenshot");
+        }
+
+    }
+
 
     @After
     public void tearDown()
