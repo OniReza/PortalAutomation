@@ -31,17 +31,17 @@ public class Settings_Step {
         settingsPage= new Settings_Page(driver);
     }
 
-    @After
-    public void takeScraenshotOnFailure(Scenario scenario) {
-
-        if (scenario.isFailed()) {
-
-            TakesScreenshot ts = (TakesScreenshot) driver;
-            byte[] src = ts.getScreenshotAs(OutputType.BYTES);
-            scenario.attach(src, "image/png", "screenshot");
-        }
-
-    }
+//    @After(order=1)
+//    public void takeScraenshotOnFailure(Scenario scenario) {
+//
+//        if (scenario.isFailed()) {
+//
+//            TakesScreenshot ts = (TakesScreenshot) driver;
+//            byte[] src = ts.getScreenshotAs(OutputType.BYTES);
+//            scenario.attach(src, "image/png", "screenshot");
+//        }
+//
+//    }
 
 
     @When("user clicks on settings button")

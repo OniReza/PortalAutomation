@@ -3,9 +3,13 @@ package StepDefinations;
 import Pages.Cards_Page;
 import Utility.Hooks;
 import Utility.SmartWait;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 
@@ -20,7 +24,17 @@ public class Cards_Step {
         cardspage = new Cards_Page(driver);
     }
 
-
+//    @After(order=1)
+//    public void takeScraenshotOnFailure(Scenario scenario) {
+//
+//        if (scenario.isFailed()) {
+//
+//            TakesScreenshot ts = (TakesScreenshot) driver;
+//            byte[] src = ts.getScreenshotAs(OutputType.BYTES);
+//            scenario.attach(src, "image/png", "screenshot");
+//        }
+//
+//    }
 
     @When("user clicks on cards on side menu")
     public void user_clicks_on_Cards_on_side_menu() throws InterruptedException {
