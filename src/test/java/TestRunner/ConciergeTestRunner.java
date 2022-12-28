@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/Features/Concierge/Concierge.feature",glue = "StepDefinations",
-        plugin = "html:target/cucumber/Concierge_report.html")
+        plugin ={"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
 public class ConciergeTestRunner {
 }

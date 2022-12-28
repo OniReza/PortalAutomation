@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/Features/InstantRewards/InstanceRewards.feature",
         glue = "StepDefinations",tags = "@tag1 or @tag2 or @tag3",
-        plugin = "html:target/cucumber/Instance_Reward_report.html",
-        monochrome = true
-      )
+        plugin ={"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
+
+
 public class InstanceRwdTestRunner {
 }
 

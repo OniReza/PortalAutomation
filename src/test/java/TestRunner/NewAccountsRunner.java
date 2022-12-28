@@ -6,6 +6,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/Features/NewAccount/NewAccount.feature",glue = "StepDefinations",tags="@tag1 or @tag2",
-        plugin = "html:target/cucumber/NewAccount.html")
+        plugin ={"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 public class NewAccountsRunner {
 }
