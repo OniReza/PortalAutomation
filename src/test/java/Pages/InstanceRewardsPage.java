@@ -15,7 +15,7 @@ public class InstanceRewardsPage extends CommonPageMethods {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/main/div/div/div/div/div/div/div/div/div[1]/div[1]/div/div")
     public WebElement cardDropList;
 
-    @FindBy(xpath = "//*[@id=\"menu-\"]/div[3]/ul/li[2]")
+       @FindBy(xpath = "//*[@id=\"menu-\"]/div[3]/ul/li[2]")
     public WebElement cardSelectEUR;
 
     @FindBy(xpath = "//*[@id=\"menu-\"]/div[3]/ul/li[1]")
@@ -55,6 +55,12 @@ public class InstanceRewardsPage extends CommonPageMethods {
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/main/div/div/div/div/div/div/div/div/div/div[1]/img")
     public WebElement RewardsAssert;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div/div[2]/div/div/div/div[1]/div/div/div/div/span[1]")
+    public WebElement popup;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/div[2]/div/div/div/div[1]/div/div/div/div/div/button[1]")
+    public WebElement btnCancel;
 
     public InstanceRewardsPage(WebDriver driver)
     {
@@ -117,5 +123,14 @@ public class InstanceRewardsPage extends CommonPageMethods {
     public Boolean isRewardsSuccessfully(){
         return RewardsAssert.isDisplayed();
 
+    }
+
+    public Boolean IsPopup()
+    {
+        return popup.isDisplayed();
+    }
+    public void buttonCancel()
+    {
+        click(btnCancel);
     }
 }

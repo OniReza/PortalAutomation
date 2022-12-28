@@ -1,6 +1,5 @@
 package StepDefinations;
 
-
 import Pages.ShoppingPage;
 import Utility.Hooks;
 import Utility.SmartWait;

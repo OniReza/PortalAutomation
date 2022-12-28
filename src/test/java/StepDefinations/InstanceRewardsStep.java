@@ -22,6 +22,17 @@ public class InstanceRewardsStep{
 
     @When("user click on instance rewards options")
     public void user_click_instance_option() throws InterruptedException {
+
+        try {
+            if (instanceRewardsPage.IsPopup()) {
+                instanceRewardsPage.buttonCancel();
+                instanceRewardsPage.ClickInstanceBtn();
+            }
+        }
+        catch(Exception e) {
+            instanceRewardsPage.ClickInstanceBtn();
+        }
+
         instanceRewardsPage.ClickInstanceBtn();
         //smartWait.waitUntilPageIsLoaded(5);
     }
