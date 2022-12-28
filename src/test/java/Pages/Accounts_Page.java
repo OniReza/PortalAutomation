@@ -251,6 +251,15 @@ public class Accounts_Page extends CommonPageMethods {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/main/div/div/div/div/div/div/div/div/div[2]/div/button")
     public WebElement btnOk;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div/div[2]/div/div/div/div[1]/div/div/div/div/span[1]")
+    public WebElement popup;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/div[2]/div/div/div/div[1]/div/div/div/div/div/button[1]")
+    public WebElement btnCancel;
+
+    @FindBy(xpath = "//span[text()='Cards']")
+    public WebElement cardsMenuBtn;
+
     public Accounts_Page(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -733,4 +742,12 @@ public class Accounts_Page extends CommonPageMethods {
     }
 
 
+    public Boolean IsPopup()
+    {
+        return popup.isDisplayed();
+    }
+    public void buttonCancel()
+    {
+        click(btnCancel);
+    }
 }

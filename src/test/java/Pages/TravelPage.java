@@ -63,6 +63,11 @@ public class TravelPage extends CommonPageMethods{
     @FindBy(xpath = "/html/body/div[1]/div/div/div/div/main/div/div/div/div/div[1]/div/div/div/div/div/div/div[3]/div/div/div[1]/div[2]/div[2]/div/div[1]/div/div/div[2]/div[2]")
     public WebElement AssertPage;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div/div[2]/div/div/div/div[1]/div/div/div/div/span[1]")
+    public WebElement popup;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/div[2]/div/div/div/div[1]/div/div/div/div/div/button[1]")
+    public WebElement btnCancel;
 
     public TravelPage(WebDriver driver)
     {
@@ -141,5 +146,14 @@ public class TravelPage extends CommonPageMethods{
     }
     public Boolean isHotelAvailable() {
         return AssertPage.isDisplayed();
+    }
+
+    public Boolean IsPopup()
+    {
+        return popup.isDisplayed();
+    }
+    public void buttonCancel()
+    {
+        click(btnCancel);
     }
 }

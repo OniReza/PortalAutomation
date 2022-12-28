@@ -111,12 +111,10 @@ public class Cards_Page extends CommonPageMethods {
     public void cardsMenuClick() {
         click(cardsMenuBtn);
     }
-
-    public Boolean IsShoppingPopup()
+    public Boolean IsPopup()
     {
         return popup.isDisplayed();
     }
-
     public void buttonCancel()
     {
         click(btnCancel);

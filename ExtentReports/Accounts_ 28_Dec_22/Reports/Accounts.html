@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Dec 27, 2022 10:31:17 AM</span></a>
+<a href="#"><span class="badge badge-primary">Dec 28, 2022 12:10:27 PM</span></a>
 </li>
 </ul>
 </div>
@@ -84,7 +84,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@tag</a>
+<a class="dropdown-item" href="#">@tag2</a>
 </ul>
 </li>
 </ul>
@@ -95,9 +95,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Test Settings Functionality</p>
+            <p class="name">Test Accounts Functionality</p>
             <p class="text-sm">
-              <span>10:31:17 AM</span> / <span>00:02:39:848</span>
+              <span>12:10:28 PM</span> / <span>00:02:42:858</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -105,10 +105,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Test Settings Functionality</h5>
-<span class='badge badge-success'>12.27.2022 10:31:17 AM</span>
-<span class='badge badge-danger'>12.27.2022 10:33:57 AM</span>
-<span class='badge badge-default'>00:02:39:848</span>
+<h5 class="test-status text-fail">Test Accounts Functionality</h5>
+<span class='badge badge-success'>12.28.2022 12:10:28 PM</span>
+<span class='badge badge-danger'>12.28.2022 12:13:10 PM</span>
+<span class='badge badge-default'>00:02:42:858</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -120,7 +120,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Verify Change Billing Method to Debit or Credit card</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Verify USD Wallet to Euro Wallet Move</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -133,46 +133,33 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinations.Settings_Step.user_is_on_settings_page()">
-                <span>When user is on settings page</span>
+              <div class="step pass-bg" title="StepDefinations.Accounts_Step.user_clicks_on_move_tab()">
+                <span>When user clicks on move tab</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinations.Settings_Step.user_clicks_on_change_billing_method()">
-                <span>And user clicks on change billing method</span>
+              <div class="step pass-bg" title="StepDefinations.Accounts_Step.user_clicks_on_select_beneficiary_dropdown()">
+                <span>And user clicks on select beneficiary dropdown</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinations.Settings_Step.user_selects_debit_or_credit_card_from_method_dropdown()">
-                <span>And user selects debit or credit card from method dropdown</span>
+              <div class="step pass-bg" title="StepDefinations.Accounts_Step.user_selects_eur_wallet()">
+                <span>And user selects EUR wallet</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinations.Settings_Step.clicks_on_add_new_card()">
-                <span>And clicks on add new card</span>
+              <div class="step fail-bg" title="StepDefinations.Accounts_Step.enter_amount_on_sending_amount_in_usd()">
+                <span>And enter amount on sending amount box</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.PaymentGatewayStep.enter_card_details_in_payment_information()">
-                <span>And enter card details in payment information</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.Settings_Step.check_newly_added_card()">
-                <span>And check newly added card</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="StepDefinations.Settings_Step.user_selects_new_added_card()">
-                <span>And user selects new added card</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <tr class="MuiTableRow-root tableRow " tabindex="-1">...</tr> is not clickable at point (572, 341). Other element would receive the click: <iframe id="apex-frame" title="card frame" class="jss168" src="https://sandbox.apexx.global/atomic/v1/api/payment/checkout/c8598dcf5f2544c38c991173183a6c6e20221227/page" cd_frame_id_="5dfa75b77985abedb5b17351d42e2fe1"></iframe>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//input[@type='number'])[1]"}
   (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'SRI-LP-01054', ip: '192.168.1.154', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\AbidReza\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55653}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 2f9f8135bae806b1f46bce9f1b0ef17d
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\AbidReza\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57401}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1ca0ad914845846950466ff1b2574f04
+*** Element info: {Using=xpath, value=(//input[@type='number'])[1]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -183,37 +170,55 @@ Session ID: 2f9f8135bae806b1f46bce9f1b0ef17d
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy21.click(Unknown Source)
-	at Utility.CommonPageMethods.click(CommonPageMethods.java:24)
-	at Pages.Settings_Page.selectNewAddedCard(Settings_Page.java:336)
-	at StepDefinations.Settings_Step.user_selects_new_added_card(Settings_Step.java:323)
-	at ✽.user selects new added card(file:///E:/Work/Spring_Rain/PortalAutomation/src/test/resources/Features/Settings/Settings.feature:38)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at Pages.Accounts_Page.enterSendingAmount(Accounts_Page.java:458)
+	at StepDefinations.Accounts_Step.enter_amount_on_sending_amount_in_usd(Accounts_Step.java:92)
+	at ✽.enter amount on sending amount box(file:///E:/Work/Spring_Rain/PortalAutomation/src/test/resources/Features/Accounts/Accounts.feature:16)
 </textarea>
       
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinations.Settings_Step.clicks_on_save_button()">
-                <span>And clicks on save button</span>
+              <div class="step skip-bg" title="StepDefinations.Accounts_Step.user_clicks_confirm()">
+                <span>And user clicks confirm</span>
       <div>Step skipped
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinations.Settings_Step.verify_payment_method_change_in_setting_page()">
-                <span>Then verify payment method change in setting page</span>
+              <div class="step skip-bg" title="StepDefinations.Accounts_Step.user_enters_secret_code()">
+                <span>And user enters secret code</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.Accounts_Step.user_clicks_confirm_again()">
+                <span>And user clicks confirm again</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.Accounts_Step.transfer_successfully_completed_message_is_shown()">
+                <span>And transfer successfully completed message is shown</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.Accounts_Step.user_clicks_on_ok()">
+                <span>And user clicks on ok</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.Accounts_Step.user_should_redirect_to_usd_wallet_details_tab()">
+                <span>Then user should redirect to USD wallet details tab</span>
       <div>Step skipped
       </div>
               </div>
               <div class="step pass-bg" title="AFTER">
-                <span>StepDefinations.Settings_Step.takeScraenshotOnFailure(io.cucumber.java.Scenario)</span>
-      <div>screenshot
+                <span>StepDefinations.LoginStep.takeScraenshotOnFailure(io.cucumber.java.Scenario)</span>
+      <div>Verify USD Wallet to Euro Wallet Move
           <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../embedded1.png' src="../embedded1.png">
+<img data-featherlight='../Screenshots/embedded1.png' src="../Screenshots/embedded1.png">
     
     </div></div>
 </div>
@@ -248,12 +253,12 @@ Session ID: 2f9f8135bae806b1f46bce9f1b0ef17d
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.ElementClickInterceptedException</p>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.ElementClickInterceptedException</h4>
+<h4>org.openqa.selenium.NoSuchElementException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -267,11 +272,11 @@ Session ID: 2f9f8135bae806b1f46bce9f1b0ef17d
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>10:33:51 AM</td>
+<td>12:12:40 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='10'>And user selects new added card</a>
+<a href="#" class="linked" test-id='1' id='7'>And enter amount on sending amount box</a>
 <div class="">
-<span class="badge badge-default">Test Settings Functionality.Verify Change Billing Method to Debit or Credit card.And user selects new added card</span>
+<span class="badge badge-default">Test Accounts Functionality.Verify USD Wallet to Euro Wallet Move.And enter amount on sending amount box</span>
 </div>
 </td>
 </tr>
@@ -300,12 +305,12 @@ Session ID: 2f9f8135bae806b1f46bce9f1b0ef17d
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@tag</p>
+<p class="name">@tag2</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@tag</h4>
+<h4>@tag2</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -319,11 +324,11 @@ Session ID: 2f9f8135bae806b1f46bce9f1b0ef17d
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>10:31:17 AM</td>
+<td>12:10:28 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Verify Change Billing Method to Debit or Credit card</a>
+<a href="#" class="linked" test-id='1' id='2'>Verify USD Wallet to Euro Wallet Move</a>
 <div class="">
-<span class="badge badge-default">Test Settings Functionality.Verify Change Billing Method to Debit or Credit card</span>
+<span class="badge badge-default">Test Accounts Functionality.Verify USD Wallet to Euro Wallet Move</span>
 </div>
 </td>
 </tr>
@@ -344,13 +349,13 @@ Session ID: 2f9f8135bae806b1f46bce9f1b0ef17d
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Dec 27, 2022 10:31:17 AM</h3>
+<h3>Dec 28, 2022 12:10:27 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Dec 27, 2022 10:33:57 AM</h3>
+<h3>Dec 28, 2022 12:13:11 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -421,10 +426,10 @@ Session ID: 2f9f8135bae806b1f46bce9f1b0ef17d
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='72%'><b>8</b> steps passed</small></div>
+<div><small data-tooltip='41%'><b>5</b> steps passed</small></div>
 <div>
-<small data-tooltip='9%'><b>1</b> steps failed,
-<b>2</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='8%'><b>1</b> steps failed,
+<b>6</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -440,7 +445,7 @@ Session ID: 2f9f8135bae806b1f46bce9f1b0ef17d
 </div></div>
 <script>
 var timeline = {
-"Test Settings Functionality":159.848
+"Test Accounts Functionality":162.858
 };
 </script>
 <div class="row">
@@ -450,7 +455,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@tag</td>
+<td>@tag2</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -477,10 +482,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 8,
+passGrandChild: 5,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 2,
+skipGrandChild: 6,
 infoGrandChild: 0,
 eventsCount: 5,
 };

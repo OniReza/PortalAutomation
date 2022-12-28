@@ -22,7 +22,7 @@ public class ShoppingStep {
     public void user_click_on_shopping_button() throws InterruptedException {
 
         try {
-            if (shoppingPage.IsShoppingPopup()) {
+            if (shoppingPage.IsPopup()) {
                 shoppingPage.buttonCancel();
                 shoppingPage.ShoppingBtn();
             }

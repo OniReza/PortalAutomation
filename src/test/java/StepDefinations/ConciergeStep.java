@@ -26,8 +26,18 @@ public class ConciergeStep{
 
     @When("user click on concierge button")
     public void user_click_on_concierge_button()throws InterruptedException{
-        conciergePage.ConciergeButton();
-        smartWait.waitUntilPageIsLoaded(5);
+
+        try {
+            if (conciergePage.IsPopup()) {
+                conciergePage.buttonCancel();
+                conciergePage.ConciergeButton();
+            }
+        }
+        catch(Exception e) {
+            conciergePage.ConciergeButton();
+        }
+        smartWait.waitUntilPageIsLoaded(1);
+
     }
     @And("input a message on chat area")
     public void input_a_message_on_chat_area()throws InterruptedException{

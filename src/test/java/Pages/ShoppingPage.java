@@ -77,7 +77,7 @@ public class ShoppingPage extends CommonPageMethods {
         click(buttonRequest);
     }
 
-    public Boolean IsShoppingPopup()
+    public Boolean IsPopup()
     {
         return popup.isDisplayed();
     }

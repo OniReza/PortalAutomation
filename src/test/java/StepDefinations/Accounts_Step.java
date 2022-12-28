@@ -31,9 +31,16 @@ public class Accounts_Step {
     //Details Tab
     @When("user clicks on account button")
     public void user_clicks_on_account() throws InterruptedException {
-        System.out.println("Acc Page: " + driver);
-        accpage.accMenuClick();
-        System.out.println("Account menu clicked");
+
+        try {
+            if (accpage.IsPopup()) {
+                accpage.buttonCancel();
+                accpage.accMenuClick();
+            }
+        }
+        catch(Exception e) {
+            accpage.accMenuClick();
+        }
         smartWait.waitUntilPageIsLoaded(1);
     }
 
@@ -78,20 +85,20 @@ public class Accounts_Step {
     public void user_selects_eur_wallet() throws InterruptedException {
         accpage.euroAccClcik();
         System.out.println("Euro Account Selected");
-        smartWait.waitUntilPageIsLoaded(5);
+        smartWait.waitUntilPageIsLoaded(1);
     }
     @When("enter amount on sending amount box")
     public void enter_amount_on_sending_amount_in_usd() throws InterruptedException {
         accpage.enterSendingAmount();
         System.out.println("Amount Entered");
-        smartWait.waitUntilPageIsLoaded(5);
+        smartWait.waitUntilPageIsLoaded(1);
     }
 
     @When("user clicks confirm")
     public void user_clicks_confirm() throws InterruptedException {
         accpage.confirmBtnClick();
         System.out.println("Confirm Button Clicked");
-        smartWait.waitUntilPageIsLoaded(5);
+        smartWait.waitUntilPageIsLoaded(1);
     }
 
     @And("user enters secret code")

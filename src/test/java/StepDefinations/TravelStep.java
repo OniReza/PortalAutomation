@@ -26,7 +26,17 @@ public class TravelStep{
 
     @When("user click travel option")
     public void user_click_travel_option(){
-        travelPage.userClickOnTravel();
+
+        try {
+            if (travelPage.IsPopup()) {
+                travelPage.buttonCancel();
+                travelPage.userClickOnTravel();
+            }
+        }
+        catch(Exception e) {
+            travelPage.userClickOnTravel();
+        }
+
         smartWait.waitUntilPageIsLoaded(5);
     }
 

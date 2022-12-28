@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import static Utility.Hooks.getDriver;
+
 public class LoginStep {
     public WebDriver driver;
     LoginPage loginPage;
@@ -27,7 +29,7 @@ public class LoginStep {
 
     public LoginStep()
     {
-        this.driver= Hooks.getDriver();
+        this.driver= getDriver();
         loginPage=new LoginPage(driver);
     }
 
@@ -36,9 +38,9 @@ public class LoginStep {
 
         if (scenario.isFailed()) {
 
-            TakesScreenshot ts = (TakesScreenshot) driver;
-            byte[] src = ts.getScreenshotAs(OutputType.BYTES);
-            scenario.attach(src, "image/png", "screenshot");
+            final byte[] screenshot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
+
         }
 
     }

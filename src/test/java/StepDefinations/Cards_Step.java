@@ -40,7 +40,7 @@ public class Cards_Step {
     public void user_clicks_on_Cards_on_side_menu() throws InterruptedException {
 
         try {
-            if (cardspage.IsShoppingPopup()) {
+            if (cardspage.IsPopup()) {
                 cardspage.buttonCancel();
                 cardspage.cardsMenuClick();
             }
