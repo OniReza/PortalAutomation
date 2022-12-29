@@ -26,7 +26,7 @@ public class LoginStep {
     public WebDriver driver;
     LoginPage loginPage;
     SmartWait smartWait = new SmartWait();
-
+    PaymentGatewayStep paymentGatewayStep;
     public LoginStep()
     {
         this.driver= getDriver();
@@ -59,195 +59,129 @@ public class LoginStep {
         System.out.println("Valid Url Is Given");
         smartWait.waitUntilPageIsLoaded(5);
         loginPage.PageClass();
-        Thread.sleep(8000);
-      // basicAuthHandle();
-    }
-
-    @And("user input email with credential")
-    public void user_input_email_with_credential()throws InterruptedException
-    {
-        loginPage.PageClass();
-        basicAuthHandle();
-        System.out.println("User Input Email and Password");
-        smartWait.waitUntilPageIsLoaded(10);
-    }
-
-    @Then("user should see the landing page")
-    public void user_should_see_landing_page()throws InterruptedException
-    {
-        Assert.assertTrue("Landing Page",loginPage. isLandingPageAvailable());
-        System.out.println("User Should See The Landing Page");
-        smartWait.waitUntilPageIsLoaded(10);
-    }
-    public void basicAuthHandle() {
-        try {
-            String url = driver.getCurrentUrl();
-            if (url.contains("tst.clubswan")) {
-                System.setProperty("java.awt.headless", "false");
-                Robot robot = new Robot();
-                if (url.contains("sandbox") || url.contains("tst")) {
-                    //type devs
-                    robot.keyPress(KeyEvent.VK_D);
-                    robot.keyRelease(KeyEvent.VK_D);
-                    robot.keyPress(KeyEvent.VK_E);
-                    robot.keyRelease(KeyEvent.VK_E);
-                    robot.keyPress(KeyEvent.VK_V);
-                    robot.keyRelease(KeyEvent.VK_V);
-                    robot.keyPress(KeyEvent.VK_S);
-                    robot.keyRelease(KeyEvent.VK_S);
-                    //press Tab button
-                    robot.keyPress(KeyEvent.VK_TAB);
-                    robot.keyRelease(KeyEvent.VK_TAB);
-                    //type super!power
-                    robot.keyPress(KeyEvent.VK_S);
-                    robot.keyRelease(KeyEvent.VK_S);
-                    robot.keyPress(KeyEvent.VK_U);
-                    robot.keyRelease(KeyEvent.VK_U);
-                    robot.keyPress(KeyEvent.VK_P);
-                    robot.keyRelease(KeyEvent.VK_P);
-                    robot.keyPress(KeyEvent.VK_E);
-                    robot.keyRelease(KeyEvent.VK_E);
-                    robot.keyPress(KeyEvent.VK_R);
-                    robot.keyRelease(KeyEvent.VK_R);
-
-                    robot.keyPress(KeyEvent.VK_SHIFT);
-                    robot.keyPress(KeyEvent.VK_1);
-                    robot.keyRelease(KeyEvent.VK_SHIFT);
-
-                    robot.keyPress(KeyEvent.VK_P);
-                    robot.keyRelease(KeyEvent.VK_P);
-                    robot.keyPress(KeyEvent.VK_O);
-                    robot.keyRelease(KeyEvent.VK_O);
-                    robot.keyPress(KeyEvent.VK_W);
-                    robot.keyRelease(KeyEvent.VK_W);
-                    robot.keyPress(KeyEvent.VK_E);
-                    robot.keyRelease(KeyEvent.VK_E);
-                    robot.keyPress(KeyEvent.VK_R);
-                    robot.keyRelease(KeyEvent.VK_R);
-                    robot.keyPress(KeyEvent.VK_TAB);
-                    robot.keyRelease(KeyEvent.VK_TAB);
-                    Thread.sleep(500);
-                    robot.keyPress(KeyEvent.VK_ENTER);
-                    robot.keyRelease(KeyEvent.VK_ENTER);
-                } else {
-                    //type sandbox
-                    robot.keyPress(KeyEvent.VK_S);
-                    robot.keyRelease(KeyEvent.VK_S);
-                    robot.keyPress(KeyEvent.VK_A);
-                    robot.keyRelease(KeyEvent.VK_A);
-                    robot.keyPress(KeyEvent.VK_N);
-                    robot.keyRelease(KeyEvent.VK_N);
-                    robot.keyPress(KeyEvent.VK_D);
-                    robot.keyRelease(KeyEvent.VK_D);
-                    robot.keyPress(KeyEvent.VK_B);
-                    robot.keyRelease(KeyEvent.VK_B);
-                    robot.keyPress(KeyEvent.VK_O);
-                    robot.keyRelease(KeyEvent.VK_O);
-                    robot.keyPress(KeyEvent.VK_X);
-                    robot.keyRelease(KeyEvent.VK_X);
-                    //press Tab
-                    robot.keyPress(KeyEvent.VK_TAB);
-                    robot.keyRelease(KeyEvent.VK_TAB);
-                    //type test!easy
-                    robot.keyPress(KeyEvent.VK_T);
-                    robot.keyRelease(KeyEvent.VK_T);
-                    robot.keyPress(KeyEvent.VK_E);
-                    robot.keyRelease(KeyEvent.VK_E);
-                    robot.keyPress(KeyEvent.VK_S);
-                    robot.keyRelease(KeyEvent.VK_S);
-                    robot.keyPress(KeyEvent.VK_T);
-                    robot.keyRelease(KeyEvent.VK_T);
-
-                    robot.keyPress(KeyEvent.VK_SHIFT);
-                    robot.keyPress(KeyEvent.VK_1);
-                    robot.keyRelease(KeyEvent.VK_SHIFT);
-
-                    robot.keyPress(KeyEvent.VK_E);
-                    robot.keyRelease(KeyEvent.VK_E);
-                    robot.keyPress(KeyEvent.VK_A);
-                    robot.keyRelease(KeyEvent.VK_A);
-                    robot.keyPress(KeyEvent.VK_S);
-                    robot.keyRelease(KeyEvent.VK_S);
-                    robot.keyPress(KeyEvent.VK_Y);
-                    robot.keyRelease(KeyEvent.VK_Y);
-
-                    robot.keyPress(KeyEvent.VK_TAB);
-                    robot.keyRelease(KeyEvent.VK_TAB);
-                    Thread.sleep(500);
-                    robot.keyPress(KeyEvent.VK_ENTER);
-                    robot.keyRelease(KeyEvent.VK_ENTER);
-                }
-
-            }
-
-        }
-        catch (NoAlertPresentException | InterruptedException | AWTException e)
-        {
-            System.out.println("No Alert Present");
-        }
-
-    }
-
-    @And("if Additional Information page appear user will answer Questions")
-    public void additionalInfoPage() throws InterruptedException {
-        loginPage = new LoginPage(driver);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        Thread.sleep(2000);
         if (driver.getCurrentUrl().contains("risk")) {
-            System.out.println("Additional Information");
-
-            System.out.println("Additional Information Complete");
-        }
-        System.out.println("No Additional Information");
-    }
-
-    @And("if Recurring payment page appear user will pay recurring fee")
-    public void reSub() throws InterruptedException {
-        loginPage = new LoginPage(driver);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        if (driver.getCurrentUrl().contains("lock-account")) {
-            Thread.sleep(2000);
-            System.out.println("Recurring pay");
-            Assert.assertTrue("Account suspended page appeared", loginPage.makePaymentChcek());
-            Thread.sleep(1000);
-
-            loginPage.Payment();
-           // Payment using wallet
-            loginPage.payByWallet();
-
-            //payment by card
-//           loginPage.payByCard();
-//            driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
-//            driver.switchTo().frame("apex-frame");
-//            loginPage.apexClass();
-
-            driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
-
-            Assert.assertTrue("Waiting page not appeared", loginPage.loadingCheck());
+            System.out.println("in add");
+            addtionalInformation();
+            Thread.sleep(20000);
+            if (driver.getCurrentUrl().contains("lock-account")) {
+                System.out.println("In recurring after risk");
+                reSubByWallet();
+                //reSubByCard();
+                Thread.sleep(20000);
+                driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            }
+        } else if (driver.getCurrentUrl().contains("lock-account")) {
+            System.out.println("Direct In recurring");
+            reSubByWallet();
+            //reSubByCard();
+            Thread.sleep(10000);
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-            System.out.println("Recurring pay Complete");
-
         }
-        System.out.println("No Recurring pay");
+        smartWait.waitUntilPageIsLoaded(5);
+        System.out.println("In Dashboard");
+        Assert.assertTrue("Dashboard didn't appeared", loginPage.dashBoardCheck());
     }
 
-    @And("if Additional Information and Recurring payment didn't appear")
-    public void if_Additional_Information_and_Recurring_payment_did_not_appear() {
-        driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
-        String url=driver.getCurrentUrl();
-        if (!url.contains("risk") && !url.contains("lock")){
-            System.out.println("We will go dashboard directly");
+    //Additional information page
+    public void addtionalInformation() throws InterruptedException {
+        if (loginPage.questionCount() == 2) {
+            loginPage.risk1();
+            loginPage.risk2();
+        } else if (loginPage.questionCount() == 3) {
+            loginPage.risk1();
+            loginPage.risk2();
+            loginPage.risk3();
+        } else if (loginPage.questionCount() == 4) {
+            loginPage.risk1();
+            loginPage.risk2();
+            loginPage.risk3();
+            loginPage.risk4();
+        } else if (loginPage.questionCount() == 5) {
+            loginPage.risk1();
+            loginPage.risk2();
+            loginPage.risk3();
+            loginPage.risk4();
+            loginPage.risk5();
+        } else if (loginPage.questionCount() == 6) {
+            loginPage.risk1();
+            loginPage.risk2();
+            loginPage.risk3();
+            loginPage.risk4();
+            loginPage.risk5();
+            loginPage.risk6();
+        } else if (loginPage.questionCount() == 7) {
+            loginPage.risk1();
+            loginPage.risk2();
+            loginPage.risk3();
+            loginPage.risk4();
+            loginPage.risk5();
+            loginPage.risk6();
+            loginPage.risk7();
+        } else if (loginPage.questionCount() == 8) {
+            loginPage.risk1();
+            loginPage.risk2();
+            loginPage.risk3();
+            loginPage.risk4();
+            loginPage.risk5();
+            loginPage.risk6();
+            loginPage.risk7();
+            loginPage.risk8();
+        } else if (loginPage.questionCount() == 9) {
+            loginPage.risk1();
+            loginPage.risk2();
+            loginPage.risk3();
+            loginPage.risk4();
+            loginPage.risk5();
+            loginPage.risk6();
+            loginPage.risk7();
+            loginPage.risk8();
+            loginPage.risk9();
+        } else if (loginPage.questionCount() == 10) {
+            loginPage.risk1();
+            loginPage.risk2();
+            loginPage.risk3();
+            loginPage.risk4();
+            loginPage.risk5();
+            loginPage.risk6();
+            loginPage.risk7();
+            loginPage.risk8();
+            loginPage.risk9();
+            loginPage.risk10();
         }
+        loginPage.continueBtnClick();
+
     }
 
-    @Then("user will be on dashboard")
-    public void user_will_be_on_dashboard() throws InterruptedException, Exception {
-        loginPage = new LoginPage(driver);
-        driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
-        Assert.assertTrue("Not in Dashboard", loginPage.dashBoardCheck());
-        System.out.println("We ar in Dashboard");
-        Thread.sleep(6000);
+    //Resub Using Wallet
+    public void reSubByWallet() throws InterruptedException {
+        Thread.sleep(2000);
+        System.out.println("Recurring pay");
+        Assert.assertTrue("Account suspended page appeared", loginPage.makePaymentChcek());
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        Thread.sleep(1000);
+        loginPage.Payment();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        loginPage.payByWallet();
+        Assert.assertTrue("Waiting page not appeared", loginPage.loadingCheck());
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        System.out.println("Recurring pay Complete");
 
-        Thread.sleep(20000);
+    }
+
+    //Resub using Card
+    public void reSubByCard() throws InterruptedException {
+        Thread.sleep(2000);
+        System.out.println("Recurring pay");
+        Assert.assertTrue("Account suspended page appeared", loginPage.makePaymentChcek());
+        Thread.sleep(1000);
+        loginPage.Payment();
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        loginPage.payByCard();
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        System.out.println("before APex");
+        paymentGatewayStep = new PaymentGatewayStep();
+        paymentGatewayStep.enter_card_details_in_payment_information();
 
     }
 }

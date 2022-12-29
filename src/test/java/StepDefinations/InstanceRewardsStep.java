@@ -33,8 +33,6 @@ public class InstanceRewardsStep{
             instanceRewardsPage.ClickInstanceBtn();
         }
 
-        instanceRewardsPage.ClickInstanceBtn();
-        //smartWait.waitUntilPageIsLoaded(5);
     }
     @And("user will choose card from card option")
     public void user_select_card_for_reward()throws InterruptedException {

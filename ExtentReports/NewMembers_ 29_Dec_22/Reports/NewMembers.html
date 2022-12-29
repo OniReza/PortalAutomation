@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Dec 28, 2022 02:43:31 PM</span></a>
+<a href="#"><span class="badge badge-primary">Dec 29, 2022 02:34:35 PM</span></a>
 </li>
 </ul>
 </div>
@@ -84,7 +84,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@tag3</a><a class="dropdown-item" href="#">@tag2</a><a class="dropdown-item" href="#">@tag1</a>
+<a class="dropdown-item" href="#">@tag1</a><a class="dropdown-item" href="#">@tag2</a>
 </ul>
 </li>
 </ul>
@@ -95,9 +95,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Functionality Test For Instance Rewards Feature</p>
+            <p class="name">Test New Accounts Functionality</p>
             <p class="text-sm">
-              <span>2:43:31 PM</span> / <span>00:14:13:424</span>
+              <span>2:34:36 PM</span> / <span>00:02:53:963</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -105,10 +105,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Functionality Test For Instance Rewards Feature</h5>
-<span class='badge badge-success'>12.28.2022 2:43:31 PM</span>
-<span class='badge badge-danger'>12.28.2022 2:57:45 PM</span>
-<span class='badge badge-default'>00:14:13:424</span>
+<h5 class="test-status text-fail">Test New Accounts Functionality</h5>
+<span class='badge badge-success'>12.29.2022 2:34:36 PM</span>
+<span class='badge badge-danger'>12.29.2022 2:37:30 PM</span>
+<span class='badge badge-default'>00:02:53:963</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -120,43 +120,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify Instance Rewards Option</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="StepDefinations.LoginStep.a_valid_url()">
-                <span>Given a valid url</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.InstanceRewardsStep.user_click_instance_option()">
-                <span>When user click on instance rewards options</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.InstanceRewardsStep.user_select_card_for_reward()">
-                <span>And user will choose card from card option</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.InstanceRewardsStep.user_will_click_select_button()">
-                <span>And user will click select button from the card list</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.InstanceRewardsStep.user_should_see_the_booking_page()">
-                <span>Then user should see the payment method page</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="9"><span class="badge log fail-bg mr-2">Fail</span>Verify Payment Methode Work Perfectly</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Verify Topup popup</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -169,31 +133,18 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinations.InstanceRewardsStep.user_in_the_payment_methode()">
-                <span>When user in the payment methode</span>
+              <div class="step fail-bg" title="StepDefinations.NewMembersStep.topup_popup_appears()">
+                <span>When topup popup appears</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.InstanceRewardsStep.user_input_some_text()">
-                <span>And user input some text if need</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="StepDefinations.InstanceRewardsStep.user_select_wallet()">
-                <span>And user select wallet from wallet list</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="StepDefinations.InstanceRewardsStep.user_click_on_redeem_button()">
-                <span>And user click on redeem button</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button class="MuiButtonBase-root MuiButton-root MuiButton-text primary-button MuiButton-disableElevation Mui-disabled Mui-disabled" tabindex="-1" type="button" disabled="">...</button> is not clickable at point (505, 690). Other element would receive the click: <div class="MuiGrid-root complete-button-container MuiGrid-item MuiGrid-grid-xs-12">...</div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(text(),'low')]"}
   (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'SRI-LP-01054', ip: '192.168.1.154', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\AbidReza\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58481}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 116fdb100a615db85493317c46a1fe4b
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\AbidReza\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55806}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5bbeec948d5421e4297b4782d93e697e
+*** Element info: {Using=xpath, value=//div[contains(text(),'low')]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -204,34 +155,53 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy20.click(Unknown Source)
-	at Utility.CommonPageMethods.click(CommonPageMethods.java:24)
-	at Pages.InstanceRewardsPage.clickRedeemBtn(InstanceRewardsPage.java:106)
-	at StepDefinations.InstanceRewardsStep.user_click_on_redeem_button(InstanceRewardsStep.java:77)
-	at ✽.user click on redeem button(file:///E:/Work/Spring_Rain/PortalAutomation/src/test/resources/Features/InstantRewards/InstanceRewards.feature:17)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.isDisplayed(Unknown Source)
+	at Pages.NewMembersPage.topupPopupCheck(NewMembersPage.java:60)
+	at StepDefinations.NewMembersStep.topup_popup_appears(NewMembersStep.java:28)
+	at ✽.topup popup appears(file:///E:/Work/Spring_Rain/PortalAutomation/src/test/resources/Features/NewMembers/NewMembers.feature:6)
 </textarea>
       
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinations.InstanceRewardsStep.user_click_on_order_button()">
-                <span>And user click on see order button</span>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.user_inputs_topup_amount()">
+                <span>And user inputs topup amount</span>
       <div>Step skipped
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinations.InstanceRewardsStep.user_should_see_payment_success_page()">
-                <span>Then user should see the order successful page</span>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.user_click_on_checkbox()">
+                <span>And user click on checkbox</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.click_proceed_button()">
+                <span>And click proceed button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.PaymentGatewayStep.enter_card_details_in_payment_information()">
+                <span>And enter card details in payment information</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.user_checks_topup_sucess_message_and_press_ok()">
+                <span>And user checks sucess message and press Ok</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.user_should_see_the_home_page()">
+                <span>Then user should see the Home page</span>
       <div>Step skipped
       </div>
               </div>
               <div class="step pass-bg" title="AFTER">
                 <span>StepDefinations.LoginStep.takeScraenshotOnFailure(io.cucumber.java.Scenario)</span>
-      <div>Verify Payment Methode Work Perfectly
+      <div>Verify Topup popup
           <div class="row mb-3"><div class="col-md-3">
 <img data-featherlight='../Screenshots/embedded1.png' src="../Screenshots/embedded1.png">
     
@@ -246,7 +216,7 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="18"><span class="badge log fail-bg mr-2">Fail</span>Verify Reward Is Successfully Done</div>
+        <div class="node" id="12"><span class="badge log fail-bg mr-2">Fail</span>Verify virtual card creation</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -259,16 +229,28 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
       <div>
       </div>
               </div>
-              <div class="step fail-bg" title="StepDefinations.InstanceRewardsStep.user_in_successful_rewards_page()">
-                <span>When user in successful rewards page</span>
+              <div class="step pass-bg" title="StepDefinations.Cards_Step.user_clicks_on_Cards_on_side_menu()">
+                <span>When user clicks on cards on side menu</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button class="MuiButtonBase-root MuiButton-root MuiButton-text primary-button MuiButton-disableElevation Mui-disabled Mui-disabled" tabindex="-1" type="button" disabled="">...</button> is not clickable at point (505, 690). Other element would receive the click: <div class="MuiGrid-root complete-button-container MuiGrid-item MuiGrid-grid-xs-12">...</div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinations.NewMembersStep.user_clicks_on_virtual_cards_tab()">
+                <span>And user clicks on virtual cards tab</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="StepDefinations.NewMembersStep.user_clicks_on_create_virtual_card_button()">
+                <span>And user clicks on create virtual card button</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Create Virtual Card')]"}
   (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'SRI-LP-01054', ip: '192.168.1.154', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\AbidReza\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58481}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 116fdb100a615db85493317c46a1fe4b
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\AbidReza\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55806}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5bbeec948d5421e4297b4782d93e697e
+*** Element info: {Using=xpath, value=//span[contains(text(),'Create Virtual Card')]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -279,40 +261,69 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at com.sun.proxy.$Proxy20.click(Unknown Source)
 	at Utility.CommonPageMethods.click(CommonPageMethods.java:24)
-	at Pages.InstanceRewardsPage.clickRedeemBtn(InstanceRewardsPage.java:106)
-	at StepDefinations.InstanceRewardsStep.user_click_on_redeem_button(InstanceRewardsStep.java:77)
-	at StepDefinations.InstanceRewardsStep.user_in_successful_rewards_page(InstanceRewardsStep.java:109)
-	at ✽.user in successful rewards page(file:///E:/Work/Spring_Rain/PortalAutomation/src/test/resources/Features/InstantRewards/InstanceRewards.feature:23)
+	at Pages.NewMembersPage.createVcardBtnClick(NewMembersPage.java:92)
+	at StepDefinations.NewMembersStep.user_clicks_on_create_virtual_card_button(NewMembersStep.java:66)
+	at ✽.user clicks on create virtual card button(file:///E:/Work/Spring_Rain/PortalAutomation/src/test/resources/Features/NewMembers/NewMembers.feature:18)
 </textarea>
       
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinations.InstanceRewardsStep.user_click_on_close_button()">
-                <span>And user click on close button</span>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.user_selects_first_card()">
+                <span>And user selects first card</span>
       <div>Step skipped
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinations.InstanceRewardsStep.user_click_on_your_rewards_tab()">
-                <span>And user click on your rewards tab</span>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.user_selects_debit_card_for_topup_for_activation()">
+                <span>And user selects debit card for topup for activation</span>
       <div>Step skipped
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinations.InstanceRewardsStep.user_should_see_his_reward_cards()">
-                <span>Then user should see his reward cards</span>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.user_enters_sending_amount_and_click_checkbox()">
+                <span>And user enters sending amount and click checkBox</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.user_click_on_continue_button()">
+                <span>And user click on continue button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.user_checks_summary_and_press_confirm()">
+                <span>And user checks summary and press confirm</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.PaymentGatewayStep.enter_card_details_in_payment_information()">
+                <span>And enter card details in payment information</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.user_enter_otp_and_click_activate_button()">
+                <span>And user enter otp and click activate button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.NewMembersStep.user_checks_topup_sucess_message_and_press_ok()">
+                <span>And user checks sucess message and press Ok</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinations.Cards_Step.user_should_redirect_back_to_virtual_card_page()">
+                <span>Then user should redirect back to virtual card page</span>
       <div>Step skipped
       </div>
               </div>
               <div class="step pass-bg" title="AFTER">
                 <span>StepDefinations.LoginStep.takeScraenshotOnFailure(io.cucumber.java.Scenario)</span>
-      <div>Verify Reward Is Successfully Done
+      <div>Verify virtual card creation
           <div class="row mb-3"><div class="col-md-3">
 <img data-featherlight='../Screenshots/embedded2.png' src="../Screenshots/embedded2.png">
     
@@ -349,12 +360,12 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 <span class="meta">
 <span class='badge log badge-danger'>2</span>
 </span>
-<p class="name">org.openqa.selenium.ElementClickInterceptedException</p>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
 <p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.ElementClickInterceptedException</h4>
+<h4>org.openqa.selenium.NoSuchElementException</h4>
 <span status="fail" class='badge log badge-danger'>2 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -368,21 +379,21 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:52:23 PM</td>
+<td>14:35:10 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='14'>And user click on redeem button</a>
+<a href="#" class="linked" test-id='1' id='4'>When topup popup appears</a>
 <div class="">
-<span class="badge badge-default">Functionality Test For Instance Rewards Feature.Verify Payment Methode Work Perfectly.And user click on redeem button</span>
+<span class="badge badge-default">Test New Accounts Functionality.Verify Topup popup.When topup popup appears</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:52:58 PM</td>
+<td>14:36:54 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='20'>When user in successful rewards page</a>
+<a href="#" class="linked" test-id='1' id='16'>And user clicks on create virtual card button</a>
 <div class="">
-<span class="badge badge-default">Functionality Test For Instance Rewards Feature.Verify Reward Is Successfully Done.When user in successful rewards page</span>
+<span class="badge badge-default">Test New Accounts Functionality.Verify virtual card creation.And user clicks on create virtual card button</span>
 </div>
 </td>
 </tr>
@@ -402,7 +413,7 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -411,12 +422,12 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@tag3</p>
+<p class="name">@tag1</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@tag3</h4>
+<h4>@tag1</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -430,11 +441,11 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:52:30 PM</td>
+<td>14:34:36 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='18'>Verify Reward Is Successfully Done</a>
+<a href="#" class="linked" test-id='1' id='2'>Verify Topup popup</a>
 <div class="">
-<span class="badge badge-default">Functionality Test For Instance Rewards Feature.Verify Reward Is Successfully Done</span>
+<span class="badge badge-default">Test New Accounts Functionality.Verify Topup popup</span>
 </div>
 </td>
 </tr>
@@ -466,47 +477,11 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:47:15 PM</td>
+<td>14:35:43 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='9'>Verify Payment Methode Work Perfectly</a>
+<a href="#" class="linked" test-id='1' id='12'>Verify virtual card creation</a>
 <div class="">
-<span class="badge badge-default">Functionality Test For Instance Rewards Feature.Verify Payment Methode Work Perfectly</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@tag1</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@tag1</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:43:31 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='2'>Verify Instance Rewards Option</a>
-<div class="">
-<span class="badge badge-default">Functionality Test For Instance Rewards Feature.Verify Instance Rewards Option</span>
+<span class="badge badge-default">Test New Accounts Functionality.Verify virtual card creation</span>
 </div>
 </td>
 </tr>
@@ -527,13 +502,13 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Dec 28, 2022 02:43:31 PM</h3>
+<h3>Dec 29, 2022 02:34:35 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Dec 28, 2022 02:57:45 PM</h3>
+<h3>Dec 29, 2022 02:37:30 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -584,9 +559,9 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='33%'><b>1</b> scenarios passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='66%'><b>2</b> scenarios failed,
+<small data-tooltip='100%'><b>2</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -604,10 +579,10 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='63%'><b>12</b> steps passed</small></div>
+<div><small data-tooltip='26%'><b>6</b> steps passed</small></div>
 <div>
-<small data-tooltip='10%'><b>2</b> steps failed,
-<b>5</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='8%'><b>2</b> steps failed,
+<b>15</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -623,7 +598,7 @@ Session ID: 116fdb100a615db85493317c46a1fe4b
 </div></div>
 <script>
 var timeline = {
-"Functionality Test For Instance Rewards Feature":853.424
+"Test New Accounts Functionality":173.963
 };
 </script>
 <div class="row">
@@ -633,7 +608,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@tag3</td>
+<td>@tag1</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -647,14 +622,6 @@ var timeline = {
 <td>0</td>
 <td>0</td>
 <td>0%</td>
-</tr>
-<tr>
-<td>@tag1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
 </tr>
 </tbody>
 </table></div>
@@ -670,16 +637,16 @@ failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
+passChild: 0,
 failChild: 2,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 12,
+passGrandChild: 6,
 failGrandChild: 2,
 warningGrandChild: 0,
-skipGrandChild: 5,
+skipGrandChild: 15,
 infoGrandChild: 0,
 eventsCount: 5,
 };

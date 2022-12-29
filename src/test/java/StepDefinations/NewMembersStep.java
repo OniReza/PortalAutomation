@@ -1,7 +1,6 @@
 package StepDefinations;
 
-import Pages.NewAccountsPage;
-import Pages.SignUp_Page;
+import Pages.NewMembersPage;
 import Utility.Hooks;
 import Utility.SmartWait;
 
@@ -10,16 +9,16 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-public class NewAccountsStep {
+public class NewMembersStep {
     public WebDriver driver;
-    NewAccountsPage newAccountsPage;
+    NewMembersPage newAccountsPage;
 
     SmartWait smartWait = new SmartWait();
 
-    public NewAccountsStep()
+    public NewMembersStep()
     {
         this.driver= Hooks.getDriver();
-        newAccountsPage=new NewAccountsPage(driver);
+        newAccountsPage=new NewMembersPage(driver);
 
     }
 

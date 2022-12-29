@@ -2,13 +2,12 @@ package Pages;
 
 import Utility.BaseData;
 import Utility.CommonPageMethods;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class NewAccountsPage extends CommonPageMethods {
+public class NewMembersPage extends CommonPageMethods {
     public static WebDriver driver;
 
     @FindBy(xpath = "//div[contains(text(),'low')]")
@@ -79,7 +78,7 @@ public boolean topupPopupCheck(){
     public void okBtnClick(){
         click(okBtn);
     }
-    public NewAccountsPage(WebDriver driver) {
+    public NewMembersPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
     public boolean dashboardCheck(){
