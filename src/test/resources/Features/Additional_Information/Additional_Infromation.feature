@@ -1,7 +1,7 @@
 Feature: Test functionality of Additional information
 
    Scenario:Verify Additional information Page
-    Given a valid url with credential
+    Given a valid url
     When user select annual transaction volume
     And user Answer from Annual Transaction Volume dropdown
 

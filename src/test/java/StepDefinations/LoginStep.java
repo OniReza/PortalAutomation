@@ -40,10 +40,9 @@ public class LoginStep {
 
             final byte[] screenshot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName());
-
         }
-
     }
+
     /*Modify by: Abid Reza
      12-20-2022
 
