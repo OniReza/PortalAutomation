@@ -94,4 +94,11 @@ public class Random_data {
         String accNum = Integer.toString(ssnNum);
         return accNum;
     }
+
+    public static String bankIbanNum() {
+        int number = faker.number().numberBetween(100000000, 999999999);
+        String accNum =Integer.toString(number);
+        String ibanNum = "US31643808296454493"+accNum;
+        return ibanNum;
+    }
 }

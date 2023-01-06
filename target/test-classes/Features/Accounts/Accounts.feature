@@ -16,7 +16,7 @@ Feature: Test Accounts Functionality
     And user clicks on ok
     Then user should redirect to wallet details tab
 
-  @USD_common
+  @USD_common @Deposit
   Scenario: Deposit: Verify Card Deposit to USD Wallet
     When user clicks on USD wallet
     And user clicks on deposit
@@ -66,7 +66,7 @@ Feature: Test Accounts Functionality
     And user clicks confirm
     Then user should see a summary
 
-  @USD_common
+  @USD_common @Payment
   Scenario:Payments: Verify Transfer to an Existing Member from USD Wallet
     When user clicks on USD wallet
     And user clicks payments tab
@@ -81,7 +81,7 @@ Feature: Test Accounts Functionality
     And press ok
     Then user should redirect to details
 
-  @USD_common
+  @USD_common @Payment
   Scenario: Payments: Verify Make a payment to a New Individual from USD Wallet
     When user clicks on USD wallet
     And user clicks payments tab
@@ -97,7 +97,7 @@ Feature: Test Accounts Functionality
     And check request success message and press ok
     Then if payment is complete user should redirect to payments tab
 
-  @USD_common
+  @USD_common @Payment
   Scenario: Payments: Verify Make a payment to Existing Individual from USD Wallet
     When user clicks on USD wallet
     And user clicks payments tab
@@ -112,7 +112,7 @@ Feature: Test Accounts Functionality
     And check request success message and press ok
     Then if payment is complete user should redirect to payments tab
 
-  @USD_common
+  @USD_common @Payment
   Scenario: Payments: Verify Make a Payment to New Business from USD Wallet
     When user clicks on USD wallet
     And user clicks payments tab
@@ -128,7 +128,7 @@ Feature: Test Accounts Functionality
     And check request success message and press ok
     Then if payment is complete user should redirect to payments tab
 
-  @USD_common
+  @USD_common @Payment
   Scenario: Payments: Verify Make a Payment to Existing Business from USD Wallet
     When user clicks on USD wallet
     And user clicks payments tab
@@ -176,7 +176,7 @@ Feature: Test Accounts Functionality
     And user clicks on ok
     Then user should redirect to wallet details tab
 
-  @EURO_common
+  @EURO_common @Deposit
   Scenario: Deposit: Verify Card Deposit to Euro Wallet
     When user clicks on EURO wallet
     And user clicks on deposit
@@ -336,7 +336,7 @@ Feature: Test Accounts Functionality
     And user clicks on ok
     Then user should redirect to wallet details tab
 
-  @GBP_common
+  @GBP_common @Deposit
   Scenario: Deposit: Verify Card Deposit to GBP Wallet
     When user clicks on GBP wallet
     And user clicks on deposit
@@ -496,7 +496,7 @@ Feature: Test Accounts Functionality
     And user clicks on ok
     Then user should redirect to wallet details tab
 
-  @JPY_cs
+  @JPY_cs @DepositJpy
   Scenario: Deposit: Verify Card Deposit to JPY Wallet
     When user clicks on JPY wallet
     And user clicks on deposit
@@ -656,7 +656,7 @@ Feature: Test Accounts Functionality
     And user clicks on ok
     Then user should redirect to wallet details tab
 
-  @CNY_cs
+  @CNY_cs @Deposit
   Scenario: Deposit: Verify Card Deposit to CNY Wallet
     When user clicks on CNY wallet
     And user clicks on deposit

@@ -122,6 +122,8 @@ public class Accounts_Page extends CommonPageMethods {
     public WebElement countryDropdown;
     @FindBy(xpath = "//li[contains(text(),'America')]")
     public WebElement america;
+    @FindBy(xpath = "//li[contains(text(),'Philippines')]")
+    public WebElement philipines;
     @FindBy(xpath = "//input[@name='addressLine1']")
     public WebElement addressLine;
     @FindBy(xpath = "//input[@name='city']")
@@ -140,6 +142,8 @@ public class Accounts_Page extends CommonPageMethods {
     public WebElement currencyDropdown;
     @FindBy(xpath = "(//span[contains(text(),'Dollar ')])[2]")
     public WebElement usd;
+    @FindBy(xpath = "//span[contains(text(),'PHP')]//parent::div[@class='MuiGrid-root MuiGrid-item']")
+    public WebElement php;
     @FindBy(xpath = "//*[@id=\"mui-component-select-bankCountry\"]")
     public WebElement bankCountry;
     @FindBy(xpath = "//input[@name='bankName']")
@@ -156,6 +160,11 @@ public class Accounts_Page extends CommonPageMethods {
     public WebElement bankPostCode;
     @FindBy(xpath = "//input[@name='bankRoutingNumber']")
     public WebElement bankRountingNum;
+    @FindBy(xpath = "//input[@name='bankSwiftCode']")
+    public WebElement bankSwiftCode;
+
+    @FindBy(xpath = "//input[@name='bankIban']")
+    public WebElement bankIban;
     @FindBy(xpath = "//input[@name='bankAccountNumber']")
     public WebElement bankAccNum;
     @FindBy(xpath = "//input[@name='bankAccountName']")
@@ -190,6 +199,8 @@ public class Accounts_Page extends CommonPageMethods {
     public WebElement transactionsTab;
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/main/div/div/div/div/div/div/div[3]/div[2]/div/table/tbody/tr[1]/td[1]/a/span")
     public WebElement firstPTransaction;
+    @FindBy(xpath = "(//span[contains(text(),' No records')])[1]")
+    public WebElement noTransectionLabel;
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/main/div/div/div/div/div/div/div[4]/div[3]/div[1]/table/tbody/tr[1]/td[1]")
     public WebElement firstCTransactions;
     @FindBy(xpath = "(//span[text()='Statements'])")
@@ -257,9 +268,6 @@ public class Accounts_Page extends CommonPageMethods {
     public WebElement busRegNumber;
     @FindBy(xpath = "(//span[text()='PAY'])[3]")
     public WebElement anotherMemberPayBtn;
-
-    @FindBy(xpath = "(//span[contains(text(),' No records')])[1]")
-    public WebElement noTransectionLabel;
 
     public Accounts_Page(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -612,6 +620,25 @@ public class Accounts_Page extends CommonPageMethods {
         Thread.sleep(300);
     }
 
+    public void recipientDetailsPHP() throws InterruptedException {
+        fName.sendKeys(Random_data.firstName());
+        Thread.sleep(300);
+        lName.sendKeys(Random_data.lastName());
+        Thread.sleep(300);
+        click(countryDropdown);
+        Thread.sleep(1500);
+        click(philipines);
+        Thread.sleep(300);
+        addressLine.sendKeys(Random_data.address());
+        Thread.sleep(300);
+        city.sendKeys("Anchorage");
+        Thread.sleep(300);
+        postCode.sendKeys(Random_data.postCode());
+        Thread.sleep(300);
+        email.sendKeys(Random_data.email());
+        Thread.sleep(300);
+
+    }
     public void bankDetails() throws InterruptedException {
         click(currencyDropdown);
         Thread.sleep(1000);
@@ -641,6 +668,30 @@ public class Accounts_Page extends CommonPageMethods {
         Thread.sleep(300);
     }
 
+    public void bankDetailsPHP() throws InterruptedException {
+        click(currencyDropdown);
+        Thread.sleep(1000);
+        click(php);
+        Thread.sleep(300);
+        click(bankCountry);
+        Thread.sleep(1000);
+        click(philipines);
+        Thread.sleep(300);
+        bankName.sendKeys("Bank of America");
+        Thread.sleep(300);
+        bankAddress.sendKeys("365 old street");
+        Thread.sleep(300);
+        bankPostCode.sendKeys(Random_data.postCode());
+        Thread.sleep(300);
+        bankSwiftCode.sendKeys("ESSEDE5F100");
+        Thread.sleep(300);
+        bankIban.sendKeys(Random_data.bankIbanNum());
+        Thread.sleep(300);
+        bankAccName.sendKeys(Random_data.fullName());
+        Thread.sleep(300);
+    }
+
+
 
     public void amount() throws InterruptedException {
         payAmount.sendKeys("20");
@@ -656,8 +707,8 @@ public class Accounts_Page extends CommonPageMethods {
         Thread.sleep(300);
         paymentReson.sendKeys("Payment Automation");
         Thread.sleep(300);
-        paymentNote.sendKeys("Payment to new Individual");
-        Thread.sleep(300);
+//        paymentNote.sendKeys("Payment to new Individual");
+//        Thread.sleep(300);
     }
 
     public void payClick() throws InterruptedException {
@@ -700,7 +751,23 @@ public class Accounts_Page extends CommonPageMethods {
         phone.sendKeys("20255300169");
         Thread.sleep(300);
     }
+    public void recipientBusinessDetailsPHP() throws InterruptedException {
+        busName.sendKeys(Random_data.businessName());
+        Thread.sleep(300);
+        busRegNum.sendKeys(Random_data.businessRegNum());
+        Thread.sleep(300);
+        click(busCountry);
+        Thread.sleep(1500);
+        click(philipines);
+        Thread.sleep(300);
+        addressLine.sendKeys(Random_data.address());
+        Thread.sleep(300);
+        postCode.sendKeys(Random_data.postCode());
+        Thread.sleep(300);
+        email.sendKeys(Random_data.email());
+        Thread.sleep(300);
 
+    }
     public void clickExisting() {
         click(existing);
     }
@@ -725,6 +792,9 @@ public class Accounts_Page extends CommonPageMethods {
         }
         return false;
     }
+    public boolean noTranscetionLabelCheck(){
+        return noTransectionLabel.isDisplayed();
+    }
 
     public boolean completedTransection() {
         DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yy");
@@ -747,10 +817,6 @@ public class Accounts_Page extends CommonPageMethods {
 
     public void downloadBtnClick(){
         click(downloadBtn);
-    }
-
-    public boolean noTranscetionLabelCheck(){
-        return noTransectionLabel.isDisplayed();
     }
 
 }

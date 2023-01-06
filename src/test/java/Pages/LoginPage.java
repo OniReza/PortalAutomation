@@ -108,7 +108,7 @@ public class LoginPage extends CommonPageMethods {
         Totp(Otp);
         Thread.sleep(1000);
         Submit();
-        Thread.sleep(5000);
+        Thread.sleep(8000);
     }
 
        public Boolean isLandingPageAvailable() {

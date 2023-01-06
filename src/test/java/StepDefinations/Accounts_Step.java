@@ -6,6 +6,7 @@ import Utility.SmartWait;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import jdk.nashorn.internal.ir.TryNode;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -377,10 +378,18 @@ public class Accounts_Step {
     public void user_enters_other_recipient_details_for_new_individual() throws InterruptedException {
         accpage.recipientDetails();
     }
+    @And("user enters other recipient details for new individual for PHP")
+    public void user_enters_other_recipient_details_for_new_individual_for_php() throws InterruptedException {
+        accpage.recipientDetailsPHP();
+    }
 
     @And("user enters bank details")
     public void user_enters_bank_details() throws InterruptedException {
         accpage.bankDetails();
+    }
+    @And("user enters bank details for PHP")
+    public void user_enters_bank_details_for_php() throws InterruptedException {
+        accpage.bankDetailsPHP();
     }
 
     @And("user enters amount")
@@ -430,6 +439,10 @@ public class Accounts_Step {
     public void user_enters_other_recipient_details_for_new_business() throws InterruptedException {
         accpage.recipientBusinessDetails();
     }
+    @And("user enters other recipient details for new business of philipines")
+    public void user_enters_other_recipient_details_for_new_business_of_philipines() throws InterruptedException {
+        accpage.recipientBusinessDetailsPHP();
+    }
 
     // Make payment to Existing Individual
 
@@ -467,9 +480,8 @@ public class Accounts_Step {
 
     }
 
-    @When("user should see latest pending transactions first\\(if any) in PENDING TRANSACTIONS")
+    @And("user should see latest pending transactions first\\(if any) in PENDING TRANSACTIONS")
     public void user_should_see_latest_pending_transactions_first_if_any_in_pending_transactions() throws InterruptedException {
-
         smartWait.waitUntilPageIsLoaded(5);
         try{
             Assert.assertTrue("Latest pending transaction not found", accpage.pendingTransection());
@@ -477,8 +489,6 @@ public class Accounts_Step {
         catch (NoSuchElementException e){
             Assert.assertTrue("Latest pending transaction not found", accpage.noTranscetionLabelCheck());
         }
-
-
     }
 
     @When("user after scroll down should see latest cleared transaction first in YOUR TRANSACTIONS")
