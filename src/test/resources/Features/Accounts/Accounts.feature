@@ -214,7 +214,7 @@ Feature: Test Accounts Functionality
     And user selects local(US Bank)
     Then user should see details of bank
 
-  @EURO_non_us @Deposit
+  @EURO_non_us @Deposit @CheckIt
   Scenario: Deposit: Verify Card Deposit to Euro Wallet via Apexx
     When user clicks on EURO wallet
     And user clicks on deposit

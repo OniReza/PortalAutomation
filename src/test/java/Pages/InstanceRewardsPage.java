@@ -73,13 +73,13 @@ public class InstanceRewardsPage extends CommonPageMethods {
 
     public void SelectCard()throws InterruptedException
     {
-        click(cardDropList);
+        cardDropList.click();
         Thread.sleep(2000);
-        click(cardSelectEUR);
+        cardSelectEUR.click();
         Thread.sleep(3000);
-        click(cardDropList);
+        cardDropList.click();
         Thread.sleep(2000);
-        click(cardSelectUSD);
+        cardSelectUSD.click();
     }
     public void selectCardFromList()
     {
@@ -93,32 +93,32 @@ public class InstanceRewardsPage extends CommonPageMethods {
     }
 
     public void btnWallet()throws InterruptedException{
-        click(selectWallet);
+        selectWallet.click();
         Thread.sleep(2000);
-        click(walletOptionsGBP);
+        walletOptionsGBP.click();
         Thread.sleep(3000);
-        click(selectWallet);
+        selectWallet.click();
         Thread.sleep(2000);
-        click(walletOptionsUSD);
+        walletOptionsUSD.click();
     }
 
     public void clickRedeemBtn() {
-        click(btnRedeem);
+      btnRedeem.click();;
     }
 
     public void clickOrderBtn() {
-        click(btnOrderButton);
+        btnOrderButton.click();
     }
     public Boolean isPaymentMethodSuccessfully() {
         return AssertPaymentPage.isDisplayed();
     }
 
     public void closeBtn(){
-        click(RewardsCloseBtn);
+        RewardsCloseBtn.click();
     }
 
     public void tabsRewards(){
-        click(RewardsTabs);
+        RewardsTabs.click();
     }
     public Boolean isRewardsSuccessfully(){
         return RewardsAssert.isDisplayed();
@@ -131,6 +131,6 @@ public class InstanceRewardsPage extends CommonPageMethods {
     }
     public void buttonCancel()
     {
-        click(btnCancel);
+        btnCancel.click();
     }
 }

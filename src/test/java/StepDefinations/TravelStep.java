@@ -8,7 +8,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class TravelStep{
@@ -22,6 +24,11 @@ public class TravelStep{
         this.driver= Hooks.getDriver();
         travelPage=new TravelPage(driver);
 
+    }
+
+    public void waitload(){
+        new WebDriverWait(driver, 30).until(
+                webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 
     @When("user click travel option")
@@ -49,7 +56,7 @@ public class TravelStep{
     @And("user select location")
     public void user_select_location(){
         travelPage.userClickLocation();
-        smartWait.waitUntilPageIsLoaded(5);
+        waitload();
     }
     @And("user input search keyword")
     public void user_input_search_keyword(){
@@ -57,7 +64,7 @@ public class TravelStep{
         smartWait.waitUntilPageIsLoaded(10);
         travelPage.keyDown();
 
-        smartWait.waitUntilPageIsLoaded(10);
+        waitload();
 
     }
 
