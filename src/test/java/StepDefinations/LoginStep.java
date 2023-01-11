@@ -40,6 +40,7 @@ public class LoginStep {
 
             final byte[] screenshot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName());
+            System.out.println("In teardown, just attached image for " + scenario.getName());
         }
     }
 
