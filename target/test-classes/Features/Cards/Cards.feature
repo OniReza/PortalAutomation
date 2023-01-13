@@ -98,7 +98,7 @@ Feature: Test functionality of Card page
     And user checks success message and press ok button
     Then user should redirect back to physical card page
 
-  @@topup
+  @topup
   Scenario: Verify Topup Functionality of Virtual Card
     When clicks on virtual card tab from card page
     And user clicks on first virtual card

@@ -39,7 +39,7 @@ Feature: Test Accounts Functionality
     And user selects local(US Bank)
     Then user should see details of bank
 
-  @USD_non_us @Deposit
+  @USD_non_us @DepositNew
   Scenario: Deposit: Verify Card Deposit to USD Wallet via Apexx
     When user clicks on USD wallet
     And user clicks on deposit
@@ -81,7 +81,7 @@ Feature: Test Accounts Functionality
     And user clicks confirm
     Then user should see a summary
 
-  @USD_common
+  @USD_common @ExistingUsd
   Scenario:Payments: Verify Transfer to an Existing Member from USD Wallet
     When user clicks on USD wallet
     And user clicks payments tab

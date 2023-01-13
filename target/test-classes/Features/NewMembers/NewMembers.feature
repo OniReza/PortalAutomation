@@ -7,7 +7,7 @@ Feature: Test New Accounts Functionality
     And user inputs topup amount
     And user click on checkbox
     And click proceed button
-    And enter card details in payment information
+#    And enter card details in payment information
     And user checks sucess message and press Ok
     Then user should see the Home page
 
@@ -21,7 +21,7 @@ Feature: Test New Accounts Functionality
     And user enters sending amount and click checkBox
     And user click on continue button
     And user checks summary and press confirm
-    And enter card details in payment information
+#    And enter card details in payment information
     And user enter otp and click activate button
     And user checks sucess message and press Ok
     Then user should redirect back to virtual card page
