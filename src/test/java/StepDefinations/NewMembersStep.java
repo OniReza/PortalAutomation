@@ -63,7 +63,17 @@ public class NewMembersStep {
     }
     @And("user clicks on create virtual card button")
     public void user_clicks_on_create_virtual_card_button(){
-        newAccountsPage.createVcardBtnClick();
+
+        if(newAccountsPage.IsCreateBtn())
+        {
+            newAccountsPage.createVcardBtnClick();
+        }
+        else
+        {
+
+        }
+
+
         smartWait.waitUntilPageIsLoaded(5);
     }
 

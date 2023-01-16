@@ -125,6 +125,8 @@ public boolean topupPopupCheck(){
     click(activateBtn);
     }
 
-
+    public boolean IsCreateBtn(){
+        return createVcardBtn.isDisplayed();
+    }
 
 }

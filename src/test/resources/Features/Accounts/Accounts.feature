@@ -96,7 +96,7 @@ Feature: Test Accounts Functionality
     And press ok
     Then user should redirect to details
 
-  @USD_common
+  @USD_common @Make
   Scenario: Payments: Verify Make a payment to a New Individual from USD Wallet
     When user clicks on USD wallet
     And user clicks payments tab
@@ -112,7 +112,7 @@ Feature: Test Accounts Functionality
     And check request success message and press ok
     Then if payment is complete user should redirect to payments tab
 
-  @USD_common
+  @USD_common @Make
   Scenario: Payments: Verify Make a payment to Existing Individual from USD Wallet
     When user clicks on USD wallet
     And user clicks payments tab
