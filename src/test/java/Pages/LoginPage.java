@@ -21,6 +21,7 @@ public class LoginPage extends CommonPageMethods {
     WebElement Totp;
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/main/div/div/div/div/div/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/p[1]")
     WebElement AssertLandingPage;
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/header/div/div/div[2]/div[1]/div/span[2]")
     WebElement AssertBoardRegisterPage;
 
@@ -30,9 +31,9 @@ public class LoginPage extends CommonPageMethods {
     @FindBy(xpath = "//h5[text()='Additional Information']")
     WebElement additionalInfo;
 
-
     @FindBy(xpath = "//button[text()='Make Payment']")
     WebElement makepayment;
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/div[2]/div/div/div/div[1]/div/div/div[1]/div/div[3]/div/div")
     WebElement CardDropdown;
     @FindBy(xpath = "//*[@id=\"menu-\"]/div[3]/ul/li[2]")
