@@ -1,4 +1,4 @@
-package Pages;
+package StepDefinations.Pages;
 
 import Utility.BaseData;
 import Utility.CommonPageMethods;

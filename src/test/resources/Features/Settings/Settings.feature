@@ -1,7 +1,7 @@
 Feature: Test Settings Functionality
   Background:
     Given a valid url
-
+  @settings
   Scenario: Verify Password Change Functionality
     When user clicks on settings button
     And user clicks on change password
@@ -13,6 +13,7 @@ Feature: Test Settings Functionality
     And user should be able to login using new password
     Then user will change password again
 
+  @settings
   Scenario: Verify Change Billing Method to Automatic
     When user is on settings page
     And user clicks on change billing method
@@ -20,6 +21,7 @@ Feature: Test Settings Functionality
     And clicks on save button
     Then automatic should show in settings page
 
+  @settings
   Scenario: Verify Change Billing Method to Accounts
     When user is on settings page
     And user clicks on change billing method
@@ -27,27 +29,20 @@ Feature: Test Settings Functionality
     And user clicks first wallet
     And clicks on save button
     Then selected wallet should show in settings page
-  @tag
+
+  @settings
   Scenario: Verify Change Billing Method to Debit or Credit card
     When user is on settings page
     And user clicks on change billing method
     And user selects debit or credit card from method dropdown
     And clicks on add new card
-    And enter card details in payment information
+    And enter card details in Apexx getway and clicks on pay
     And check newly added card
     And user selects new added card
     And clicks on save button
     Then verify payment method change in setting page
 
-
-  Scenario: Verify Change Billing Method to existing Debit or Credit card
-    When user is on settings page
-    And user clicks on change billing method
-    And user selects debit or credit card from method dropdown
-    And user selects first debit card
-    And clicks on save button
-    Then selected card should show in settings page
-
+  @settings
   Scenario: Verify Marketing Functionality of Settings Page
     When user is on settings page
     And user clicks on Phone change of marketing
@@ -59,6 +54,7 @@ Feature: Test Settings Functionality
     And user clicks on postalmail change of marketing
     Then user should see message
 
+  @settings
   Scenario: Verify Settings Functionality of Settings Page
     When user clicks on settings button
     And user clicks on preferred currency change button

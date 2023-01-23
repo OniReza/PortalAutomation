@@ -1,4 +1,4 @@
-package Pages;
+package StepDefinations.Pages;
 
 import Utility.BaseData;
 import Utility.CommonPageMethods;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class NewMembersPage extends CommonPageMethods {
+public class NewMemberPage extends CommonPageMethods {
     public static WebDriver driver;
     String givenWalletNum=null;
     @FindBy(xpath = "//div[contains(text(),'low')]")
@@ -135,7 +135,7 @@ public class NewMembersPage extends CommonPageMethods {
     }
 
 
-    public NewMembersPage(WebDriver driver) {
+    public NewMemberPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
     public boolean topupPopupCheck() {
