@@ -6,42 +6,32 @@ import org.apache.commons.codec.binary.Hex;
 
 public class BaseData {
 
-
     public static String BaseUrlMain() {
-
-        String PortalDev= BasePortals.portalsDEV();
         String PortalTst= BasePortals.portalsTST();
-
-//      String URL =PortalDev;
         String URL =PortalTst;
         return URL;
-
     }
 
     public static String BasePopUpUrl()
     {
         String PortalDev= BasePortals.portalsDEV();
-        String PortalTst= BasePortals.portalsTST();
-
         String PURL = PortalDev;
-//        String PURL =PortalTst;
         return PURL;
     }
 
     public static String BaseEmail(){
-
-        String Email=BaseEmail.BaseEmailList();// "stalin.neurotrade.tst.1@mailinator.com"; //Neotrade
-        return Email;
+          String Email=BaseCredentials.BaseEmailList() ;
+          return Email;
     }
     public static String BasePassword(){
-       // String Password = "Tt123#123";
-        String Password = "Tt123#123#";
+        String Password = BaseCredentials.BasePassword();// "Tt123#123#";
         return Password;
     }
     public static String BaseOtp() {
-        String secretKey = BaseOTP.BaseOTPList();
+        String secretKey = BaseCredentials.BaseOTPList();
         String code = getTOTPCode(secretKey);
         return code;
+
     }
     private static String getTOTPCode(String secretKey) {
         Base32 base32 = new Base32();
