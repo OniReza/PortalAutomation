@@ -6,10 +6,12 @@ import org.apache.commons.codec.binary.Hex;
 
 public class BaseData {
 
+
     public static String BaseUrlMain() {
         String PortalTst= BasePortals.portalsTST();
         String URL =PortalTst;
         return URL;
+
     }
 
     public static String BasePopUpUrl()
@@ -20,7 +22,8 @@ public class BaseData {
     }
 
     public static String BaseEmail(){
-          String Email=BaseCredentials.BaseEmailList() ;
+
+         String Email=BaseCredentials.BaseEmailList() ;
           return Email;
     }
     public static String BasePassword(){
