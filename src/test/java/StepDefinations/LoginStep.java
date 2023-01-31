@@ -47,7 +47,7 @@ public class LoginStep {
 
     */
     @Given("a valid url")
-    public void a_valid_url() throws InterruptedException {
+    public void a_valid_url() throws Exception {
         String URL = BaseData.BaseUrlMain();
         String PopURL = BaseData.BasePopUpUrl();
         driver.get(PopURL);
@@ -59,7 +59,8 @@ public class LoginStep {
         waitLoad();
         try {
             smartWait.waitUntilPageIsLoaded(5);
-            Assert.assertTrue("Dashboard didn't appeared", loginPage.recentTransectionSectionCheck());
+            Assert.assertTrue("Recent transaction didn't appeared", loginPage.recentTransectionSectionCheck());
+            Assert.assertTrue("Total balances didn't appeared", loginPage.totalBalenceSectionCheck());
             System.out.println("Direct in Dashboard");
         } catch (NoSuchElementException e) {
             if (loginPage.addInformationLabelCheck()) {
@@ -68,7 +69,8 @@ public class LoginStep {
                 Thread.sleep(20000);
                 try {
                     smartWait.waitUntilPageIsLoaded(5);
-                    Assert.assertTrue("Dashboard didn't appeared", loginPage.recentTransectionSectionCheck());
+                    Assert.assertTrue("Recent transaction didn't appeared", loginPage.recentTransectionSectionCheck());
+                    Assert.assertTrue("Total balances didn't appeared", loginPage.totalBalenceSectionCheck());
                     System.out.println("In Dashboard after risk assessment");
                 } catch (Exception e1) {
                     System.out.println("Couldn't find dashboard");

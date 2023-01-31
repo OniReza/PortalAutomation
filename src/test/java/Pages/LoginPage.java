@@ -76,6 +76,8 @@ public class LoginPage extends CommonPageMethods {
     WebElement dashBoard;
     @FindBy(xpath = "//span[contains(text(),'Recent transactions') or contains(text(),'Recent Transactions')]")
     WebElement recentTransectionSection;
+    @FindBy(xpath = "//p[contains(text(),'Total')]")
+    WebElement totalBalenceSection;
     @FindBy(xpath = "//h5[text()='Additional Information']")
     WebElement addInformationLabel;
 
@@ -96,7 +98,7 @@ public class LoginPage extends CommonPageMethods {
         Submit.click();
     }
 
-    public void PageClass()throws InterruptedException
+    public void PageClass()throws Exception
     {
         String Email = BaseData.BaseEmail();
         String Pass=BaseData.BasePassword();
@@ -228,6 +230,9 @@ public boolean makePaymentChcek(){
     }
     public boolean recentTransectionSectionCheck() {
         return recentTransectionSection.isDisplayed();
+    }
+    public boolean totalBalenceSectionCheck(){
+        return totalBalenceSection.isDisplayed();
     }
     public boolean addInformationLabelCheck() {
         return addInformationLabel.isDisplayed();

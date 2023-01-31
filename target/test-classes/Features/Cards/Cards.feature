@@ -2,7 +2,7 @@ Feature: Test functionality of Card page
   Background:
     Given a valid url
 
-  @common
+  @common @t1
   Scenario: Verify Load Functionality of Physical Card
     When user clicks on cards on side menu
     And user clicks on physical card
@@ -14,7 +14,7 @@ Feature: Test functionality of Card page
     And user checks transfer success message and press ok button
     Then user should redirect back to physical card page
 
-  @common
+  @common @t2
   Scenario: Verify Unload Functionality of Physical Card
     When user clicks on cards on side menu
     And user clicks on physical card

@@ -25,10 +25,11 @@ public class Accounts_Page extends CommonPageMethods {
     //Accounts Move xpaths
     @FindBy(xpath = "(//p[contains(text(),'Available Balance')])[1]")
     public WebElement usdWallet;
-    @FindBy(xpath = "//span[contains(text(),'Euro')]")
+    @FindBy(xpath = "(//span[contains(text(),'Euro')])[1]")
     public WebElement euroWallet;
-    @FindBy(xpath = "//span[contains(text(),'Pound')]")
+    @FindBy(xpath = "//span[contains(text(),'Pound Sterling')]")
     public WebElement gbpWallet;
+
     @FindBy(xpath = "//span[contains(text(),'Yen')]")
     public WebElement jpyWallet;
     @FindBy(xpath = "//span[contains(text(),'Yuan')]")
@@ -39,6 +40,12 @@ public class Accounts_Page extends CommonPageMethods {
     public WebElement moveTab;
     @FindBy(xpath = "//div[contains( text(),'Beneficiary')]")
     public WebElement selectBeneficiaryDropdown;
+
+    @FindBy(xpath = "//Span[contains( text(),'$')]")
+    public WebElement usdAcc;
+    @FindBy(xpath = "//Span[contains( text(),'€')]")
+    public WebElement euroAcc;
+
     @FindBy(xpath = "//span[contains( text(),'円')]")
     public WebElement jpyAcc;
     @FindBy(xpath = "//Span[contains( text(),'¥')]")
@@ -144,7 +151,8 @@ public class Accounts_Page extends CommonPageMethods {
     public WebElement phone;
     @FindBy(xpath = "//*[@id=\"mui-component-select-currency\"]/div/div[2]")
     public WebElement currencyDropdown;
-    @FindBy(xpath = "(//span[contains(text(),'Dollar ')])[2]")
+    //@FindBy(xpath = "(//span[contains(text(),'Dollar ')])[2]")
+    @FindBy(xpath = "//*[@id=\"menu-currency\"]/div[3]/ul/li[1]/div/div[2]")
     public WebElement usd;
     @FindBy(xpath = "//*[@id=\"mui-component-select-bankCountry\"]")
     public WebElement bankCountry;
@@ -461,6 +469,9 @@ public class Accounts_Page extends CommonPageMethods {
     public void usdWalletClick() {
         usdWallet.click();
     }
+    public void euroAccClcik() {
+        euroAcc.click();
+    }
     public void euroWalletClick() {
         euroWallet.click();
     }
@@ -491,6 +502,9 @@ public class Accounts_Page extends CommonPageMethods {
     public void cnyAccClcik() {
         cnyAcc.click();
     }
+    public void usdAccClcik() {
+        usdAcc.click();
+    }
 
     public void enterSendingAmount() {
         sendAmount.sendKeys("1000");
@@ -501,7 +515,7 @@ public class Accounts_Page extends CommonPageMethods {
         confirmBtn.click();
     }
 
-    public void enterSecretCode() {
+    public void enterSecretCode()throws Exception {
         String Otp = BaseData.BaseOtp();
         System.out.println("Move: " + Otp);
         secretCode.sendKeys(Otp);
@@ -675,7 +689,7 @@ public class Accounts_Page extends CommonPageMethods {
         Thread.sleep(300);
         paymentReson.sendKeys("Payment Automation");
         Thread.sleep(300);
-        paymentNote.sendKeys("Payment to new Individual");
+        paymentNote.sendKeys("Make Payment Automation Note");
         Thread.sleep(300);
     }
 
