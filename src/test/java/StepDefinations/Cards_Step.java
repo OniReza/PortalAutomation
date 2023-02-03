@@ -12,6 +12,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.*;
 import java.util.concurrent.TimeUnit;
 
 
@@ -31,15 +32,16 @@ public class Cards_Step {
     }
 
 
-    @And("user clicks on cards on side menu")
-    public void user_clicks_on_Cards_on_side_menu() throws InterruptedException {
+    @When("user clicks on cards on side menu")
+    public void user_clicks_on_Cards_on_side_menu() throws InterruptedException, FileNotFoundException {
         waitload();
         cardspage.cardsMenuClick();
         waitload();
+
     }
 
     @Then("physical cards page will appear")
-    public void physical_cards_page_will_appear() {
+    public void physical_cards_page_will_appear() throws FileNotFoundException {
         waitload();
         Assert.assertTrue("Physical card didn't appear", cardspage.physicalCardCheck());
         System.out.println("Physical card appeared");
@@ -305,7 +307,7 @@ public class Cards_Step {
 //+++++++++++++++++++++++++++++++++++++++++++++++++Digital Card+++++++++++++++++++++++++++++++++++++++++++
 
     @When("clicks on virtual card tab from card page")
-    public void clicks_on_virtual_card_tab_from_card_page() throws InterruptedException {
+    public void clicks_on_virtual_card_tab_from_card_page() throws InterruptedException, FileNotFoundException {
         user_clicks_on_Cards_on_side_menu();
         waitload();
         cardspage.virtualCardTabClick();

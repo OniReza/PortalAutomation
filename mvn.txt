@@ -1,3 +1,6 @@
 mvn test -Dcucumber.options="classpath:features/login.feature"
 
 mvn verify -Dcucumber.options="classpath:features/login.feature" -Dcucumber.filter.tags="@smoke"
+
+
+https://www.quantumworkplace.com/future-of-work/20-questions-effective-employee-review
