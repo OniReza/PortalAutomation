@@ -1,6 +1,7 @@
 package StepDefinations;
 
 import Pages.Accounts_Page;
+import Utility.API;
 import Utility.Hooks;
 import Utility.SmartWait;
 import io.cucumber.java.en.And;
@@ -17,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class Accounts_Step {
     public WebDriver driver;
     Accounts_Page accpage;
+    API.CurrencyExchangeRate cr = new API.CurrencyExchangeRate();
     SmartWait smartWait = new SmartWait();
 
     public Accounts_Step() {
@@ -32,6 +34,7 @@ public class Accounts_Step {
     //Details Tab
     @When("user clicks on account button")
     public void user_clicks_on_account() throws InterruptedException {
+        cr.rates();
         waitload();
         accpage.accMenuClick();
         System.out.println("Account menu clicked");
@@ -245,10 +248,10 @@ public class Accounts_Step {
         waitload();
     }
 
-    @And("user enters amount to load in USD")
-    public void user_enters_amount_to_load_in_usd() throws InterruptedException {
+    @And("user enters amount to deposit {string}")
+    public void user_enters_amount_to_deposit(String amt )  throws InterruptedException {
         waitload();
-        accpage.enterloadAmount();
+        accpage.enterloadAmount(amt);
         System.out.println("Load amount Entered");
         waitload();
         Thread.sleep(500);
@@ -262,10 +265,17 @@ public class Accounts_Step {
         waitload();
     }
 
-    @And("summary should appear")
-    public void user_checks_summary() throws InterruptedException {
+    @And("deposit summary should appear")
+    public void deposit_summary_should_appear() throws InterruptedException {
         waitload();
-        accpage.checkSummary();
+        Assert.assertTrue("Summary didn't appear as expected",accpage.checkDepositSummary());
+        System.out.println("Summary appeared");
+        Thread.sleep(500);
+    }
+    @And("move summary should appear")
+    public void move_summary_should_appear() throws InterruptedException {
+        waitload();
+        Assert.assertTrue("Summary didn't appear as expected",accpage.checkMoveSummary());
         System.out.println("Summary appeared");
         Thread.sleep(500);
     }
@@ -293,7 +303,6 @@ public class Accounts_Step {
 //        Assert.assertTrue("Deposit Unsuccessfull", accpage.checkLoadSuccessMsg());
 //        System.out.println("Deposit Successful");
 //        waitload();
-        System.out.println("1");
         smartWait.waitUntilPageIsLoaded(10);
         waitload();
 
@@ -304,10 +313,8 @@ public class Accounts_Step {
         catch (NoSuchElementException e){
             Assert.assertTrue("Topup unsucessful", accpage.sucessMsgwithLoader());
         }
-        System.out.println("2");
         Thread.sleep(2000);
         accpage.clickOKbtn();
-        System.out.println("3");
         waitload();
     }
 

@@ -10,12 +10,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import static Utility.API.CurrencyExchangeRate.*;
+import static Utility.UserProfile.cardLoad.clRate;
 
 
 public class Accounts_Page extends CommonPageMethods {
     public static WebDriver driver;
+    String moveAmount="1200";
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/main/div/div/div/div/div/div/div[2]/div/div/div/div/div[2]")
     public WebElement graph;
 
@@ -273,6 +278,27 @@ public class Accounts_Page extends CommonPageMethods {
     public WebElement busRegNumber;
     @FindBy(xpath = "(//span[text()='PAY'])[3]")
     public WebElement anotherMemberPayBtn;
+    //FEE  Calculation
+    @FindBy(xpath = "//span[contains(text(),'Sending amount')]")
+    public WebElement sendingAmount;
+    @FindBy(xpath = "//span[contains(text(),'Fee amount')]")
+    public WebElement feeAmount;
+    @FindBy(xpath = "//span[contains(text(),'Total Amount')]")
+    public WebElement totalAmount;
+    @FindBy(xpath = "//span[contains(text(),'Receiving amount')]")
+    public WebElement recivingAmount;
+    @FindBy(xpath = "//span[contains(text(),'Dollar') or contains(text(),'Yen') or contains(text(),'Sterling')or contains(text(),'Euro') or contains(text(),'Yuan')]")
+    public WebElement walletCurrency;
+    @FindBy(xpath = "//span[contains(text(),'1 ')][1]")
+    public WebElement convRate;
+    @FindBy(xpath = "//span[contains(text(),'Sending Amount')]")
+    public WebElement sendAmt;
+    @FindBy(xpath = "//span[contains(text(),'Transfer Fee')]")
+    public WebElement transferFee;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/main/div/div/div/div/div/div/div[2]/div/div/div/div/div/div[2]/div[1]/div/div/div[16]/span")
+    public WebElement receiveAmount;
+    @FindBy(xpath = "(//input[@type='number'])[2]")
+    public WebElement recAmtBox;
 
     public Accounts_Page(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -507,7 +533,7 @@ public class Accounts_Page extends CommonPageMethods {
     }
 
     public void enterSendingAmount() {
-        sendAmount.sendKeys("1000");
+        sendAmount.sendKeys(moveAmount);
     }
 
     public void confirmBtnClick() {
@@ -545,17 +571,136 @@ public class Accounts_Page extends CommonPageMethods {
         debitCard.click();
     }
 
-    public void enterloadAmount() {
-        loadAmount.sendKeys("5000");
+    public void enterloadAmount(String amount) {
+        loadAmount.sendKeys(amount);
     }
 
     public void aggrementClick() {
         trAggrement.click();
     }
 
-    public void checkSummary() {
-        click(summary);
+    public boolean checkDepositSummary() {
+        confirmBtn.sendKeys(Keys.PAGE_DOWN);
+        DecimalFormat df = new DecimalFormat("#.##");
+        String sAmt = sendingAmount.getText();
+        String fAmt = feeAmount.getText();
+        String tAmt = totalAmount.getText();
+        String rAmt = recivingAmount.getText();
+        System.out.println("Given " + sAmt);
+        System.out.println("Given " + fAmt);
+        System.out.println("Given " + tAmt);
+        System.out.println("Given " + rAmt);
+        String[] p1 = {sAmt.replaceAll("[\\s,]+", "").substring(15), fAmt.replaceAll("[\\s,]+", "").substring(12), tAmt.replaceAll("[\\s,]+", "").substring(13), rAmt.replaceAll("[\\s,]+", "").substring(17)};
+        String loadWalletCurrency = sAmt.replaceAll("[\\s,]+", "").substring(14, 15);
+        double sendingAmount = Double.valueOf(p1[0]);
+        double givenFee = Double.valueOf(p1[1]);
+        double givenTotal = Double.valueOf(p1[2]);
+        double givenReceiveAmount = Double.valueOf(p1[3]);
+        if (loadWalletCurrency.contains("$")) {
+            System.out.println("In USD Wallet");
+            double calculatedFee = Double.valueOf(df.format(sendingAmount * clRate*ToUSD));
+            double calculatedTotal = Double.valueOf(sendingAmount + calculatedFee);
+            System.out.println("Calculated Fee: " + calculatedFee);
+            System.out.println("Calculated Total Amount: " + calculatedTotal);
+            System.out.println("Diff Given and Calculated Fee: " + Math.abs(Double.valueOf(df.format(calculatedFee - givenFee))));
+            System.out.println("Diff Given and Calculated Total: " + Math.abs(Double.valueOf(df.format(givenTotal - calculatedTotal))));
+            System.out.println();
+
+            if ((Math.abs(calculatedFee - givenFee)) <= 7 && (Math.abs(givenTotal - calculatedTotal)) <= 7 && sendingAmount == givenReceiveAmount) {
+                return recivingAmount.isDisplayed();
+            } else {
+                return false;
+            }
+        } else if (loadWalletCurrency.contains("€")) {
+            System.out.println("In EURO Wallet");
+            double calculatedFee = Double.valueOf(df.format(sendingAmount * clRate * ToEuro));
+            double calculatedTotal = Double.valueOf(sendingAmount + calculatedFee);
+            System.out.println("Calculated Fee: " + calculatedFee);
+            System.out.println("Calculated Total Amount: " + calculatedTotal);
+            System.out.println("Diff Given and Calculated Fee: " + Math.abs(Double.valueOf(df.format(calculatedFee - givenFee))));
+            System.out.println("Diff Given and Calculated Total: " + Math.abs(Double.valueOf(df.format(givenTotal - calculatedTotal))));
+            System.out.println();
+
+            if ((Math.abs(calculatedFee - givenFee)) <= 7 && (Math.abs(givenTotal - calculatedTotal)) <= 7 && sendingAmount == givenReceiveAmount) {
+                return recivingAmount.isDisplayed();
+            } else {
+                return false;
+            }
+        } else if (loadWalletCurrency.contains("£")) {
+            System.out.println("In GBP Wallet");
+            double calculatedFee = Double.valueOf(df.format(sendingAmount * clRate * ToGBP));
+            double calculatedTotal = Double.valueOf(sendingAmount + calculatedFee);
+            System.out.println("Calculated Fee: " + calculatedFee);
+            System.out.println("Calculated Total Amount: " + calculatedTotal);
+            System.out.println("Diff Given and Calculated Fee: " + Math.abs(Double.valueOf(df.format(calculatedFee - givenFee))));
+            System.out.println("Diff Given and Calculated Total: " + Math.abs(Double.valueOf(df.format(givenTotal - calculatedTotal))));
+            System.out.println();
+
+            if ((Math.abs(calculatedFee - givenFee)) <= 7 && (Math.abs(givenTotal - calculatedTotal)) <= 7 && sendingAmount == givenReceiveAmount) {
+                return recivingAmount.isDisplayed();
+            } else {
+                return false;
+            }
+        } else if (loadWalletCurrency.contains("¥") && walletCurrency.getText().contains("Yuan")) {
+            System.out.println("In CNY Wallet");
+            double calculatedFee = Double.valueOf(df.format(sendingAmount * clRate * ToCNY));
+            double calculatedTotal = Double.valueOf(sendingAmount + calculatedFee);
+            System.out.println("Calculated Fee: " + calculatedFee);
+            System.out.println("Calculated Total Amount: " + calculatedTotal);
+            System.out.println("Diff Given and Calculated Fee: " + Math.abs(Double.valueOf(df.format(calculatedFee - givenFee))));
+            System.out.println("Diff Given and Calculated Total: " + Math.abs(Double.valueOf(df.format(givenTotal - calculatedTotal))));
+            System.out.println();
+
+            if ((Math.abs(calculatedFee - givenFee)) <= 100 && (Math.abs(givenTotal - calculatedTotal)) <= 100 && sendingAmount == givenReceiveAmount) {
+                return recivingAmount.isDisplayed();
+            } else {
+                return false;
+            }
+        } else if (loadWalletCurrency.contains("¥") && walletCurrency.getText().contains("Yen")) {
+            System.out.println("In JPY Wallet");
+            double calculatedFee = Double.valueOf(df.format(sendingAmount * clRate * ToJPY));
+            double calculatedTotal = Double.valueOf(sendingAmount + calculatedFee);
+            System.out.println("Calculated Fee: " + calculatedFee);
+            System.out.println("Calculated Total Amount: " + calculatedTotal);
+            System.out.println("Diff Given and Calculated Fee: " + Math.abs(Double.valueOf(df.format(calculatedFee - givenFee))));
+            System.out.println("Diff Given and Calculated Total: " + Math.abs(Double.valueOf(df.format(givenTotal - calculatedTotal))));
+            System.out.println();
+
+            if ((Math.abs(calculatedFee - givenFee)) <= 300 && (Math.abs(givenTotal - calculatedTotal)) <= 300 && sendingAmount == givenReceiveAmount) {
+                return recivingAmount.isDisplayed();
+            } else {
+                return false;
+            }
+
+        } else return false;
+
     }
+
+    public boolean checkMoveSummary(){
+        String rate = convRate.getText();
+        String sAmt = sendAmt.getText();
+        String rAmt = receiveAmount.getText();
+        String tAmt = totalAmount.getText();
+        double conversionRate = Double.valueOf(rate.replaceAll("\\s", "").substring(5).replaceAll("[a-zA-Z]", ""));
+        double sendingAmount = Math.floor(Double.valueOf(sAmt.replaceAll("[\\s,]+", "").substring(15)));
+        double amountoReceive = Math.floor(Double.valueOf(rAmt.replaceAll("[\\s,]+", "").substring(1)));
+        double totalAmount = Math.floor(Double.valueOf(tAmt.replaceAll("[\\s,]+", "").substring(13)));
+        System.out.println("Summary Rate: " +rate);
+        System.out.println("Summary Sending Amount: "+ sendingAmount);
+        System.out.println("Summary Receiving Amount: "+ amountoReceive);
+        System.out.println("Summary Total Amount: "+ totalAmount);
+        System.out.println("Calculated Receiving Amount: "+ Double.valueOf(moveAmount)*conversionRate);
+        System.out.println("Diff of Receiving Amounts: "+ Math.abs(Double.valueOf(moveAmount)*conversionRate-amountoReceive));
+
+        if (Math.abs(Double.valueOf(moveAmount)*conversionRate-amountoReceive)<=5 && Double.valueOf(totalAmount)==totalAmount ){
+            return true;
+        }
+        else {
+            return  false;
+        }
+
+    }
+
 
     public boolean checkExpeditSummary() {
         return expeditSummary.isDisplayed();
