@@ -45,7 +45,6 @@ Feature: Test Accounts Functionality
     And user clicks on ok
     Then user should redirect to wallet details tab
 
-
   @USD_us @us_bank
   Scenario: Deposit: Verify Local(US Bank) Deposit to USD Wallet
     When user clicks on USD wallet

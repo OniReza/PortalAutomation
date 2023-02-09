@@ -6,7 +6,7 @@ public class BasePortals {
     {
 
         Portals.dev dev = new Portals.dev();
-        String PortalDev=dev.debtboxDv();
+        String PortalDev=dev.clubswan();
         String username = "devs";
         String password = "super!power";
         String URLDEV = "https://" + username + ":" + password + "@" + PortalDev;
@@ -16,7 +16,7 @@ public class BasePortals {
     public static String portalsTST()
     {
         Portals.tst tst = new Portals.tst();
-        String PortalTst = tst.debtbox();
+        String PortalTst = tst.clubswan();
         String username = "sandbox";
         String password = "test!easy";
         String URLTST = "https://" + username + ":" + password + "@" + PortalTst;

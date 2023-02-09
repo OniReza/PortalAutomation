@@ -232,7 +232,6 @@ public class Accounts_Step {
         System.out.println("Deposit clicked");
         waitload();
     }
-
     @And("user expend from dropdown")
     public void user_expend_from_dropdown() throws InterruptedException {
         waitload();
