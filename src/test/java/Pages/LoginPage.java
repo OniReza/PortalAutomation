@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.swing.plaf.PanelUI;
 import java.util.List;
 
 public class LoginPage extends CommonPageMethods {
@@ -29,8 +30,6 @@ public class LoginPage extends CommonPageMethods {
 
     @FindBy(xpath = "//h5[text()='Additional Information']")
     WebElement additionalInfo;
-
-
     @FindBy(xpath = "//button[text()='Make Payment']")
     WebElement makepayment;
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/div[2]/div/div/div/div[1]/div/div/div[1]/div/div[3]/div/div")

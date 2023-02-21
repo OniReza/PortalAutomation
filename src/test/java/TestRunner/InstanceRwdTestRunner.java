@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         glue = "StepDefinations",tags = "@tag1 or @tag2 or @tag3",
         plugin ={"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
-
 public class InstanceRwdTestRunner {
+
 }
 

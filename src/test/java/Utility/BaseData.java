@@ -3,6 +3,7 @@ package Utility;
 import de.taimos.totp.TOTP;
 import org.apache.commons.codec.binary.Base32;
 import org.apache.commons.codec.binary.Hex;
+import Utility.BasePortals;
 
 public class BaseData {
 

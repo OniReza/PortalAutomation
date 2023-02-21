@@ -16,22 +16,37 @@ import static org.openqa.selenium.OutputType.BYTES;
 
 public class Hooks {
     private static WebDriver driver;
+    private Scenario scenario;
 
     @Before
     public static WebDriver getDriver() {
 
         if (null == driver) {
-            System.setProperty("webdriver.chrome.driver","Drivers/chromedriver.exe"); //Chrome
+
+            System.setProperty("webdriver.chrome.driver","Drivers/chromedriver.exe"); //Google Chrome
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-//            System.setProperty("webdriver.gecko.driver", "Drivers/geckodriver.exe"); //Firefox
-//            driver = new FirefoxDriver();
+//            System.setProperty("webdriver.chrome.driver","Drivers/chromedriver.exe"); //Google Chrome
+//            driver = new ChromeDriver();
 //            driver.manage().window().maximize();
 //            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-//            System.setProperty("webdriver.edge.driver", "Drivers/msedgedriver.exe"); //Internet Explorer
+//                System.setProperty("webdriver.gecko.driver", "Drivers/geckodriver.exe"); //Fire Fox
+//                driver = new FirefoxDriver();
+//                driver.manage().window().maximize();
+//                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+
+//            System.setProperty("webdriver.edge.driver", "Drivers/msedgedriver.exe"); //MicroSoftEdge
+//            driver = new EdgeDriver();
+//            driver.manage().window().maximize();
+//            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+
+//
+//            System.setProperty("webdriver.edge.driver", "Drivers/msedgedriver.exe"); //MicroSoftEdge
 //            driver = new EdgeDriver();
 //            driver.manage().window().maximize();
 //            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -40,14 +55,15 @@ public class Hooks {
 
         return driver;
     }
-
+    public void setScenario(Scenario scenario)
+    {
+        this.scenario = scenario;
+    }
     @After
     public void tearDown()
     {
         driver.quit();
         driver.close();
     }
-
-
 
 }

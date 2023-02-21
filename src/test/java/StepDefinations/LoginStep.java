@@ -8,11 +8,13 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
 import org.openqa.selenium.*;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 import static Utility.Hooks.getDriver;
+
 
 public class LoginStep {
     public WebDriver driver;
@@ -39,7 +41,6 @@ public class LoginStep {
             scenario.attach(screenshot, "image/png", scenario.getName());
 
         }
-
 
     }
 

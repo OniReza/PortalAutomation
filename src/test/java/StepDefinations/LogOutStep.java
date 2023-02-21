@@ -1,9 +1,14 @@
 package StepDefinations;
 
 import Pages.LogOutPage;
+import Pages.Settings_Page;
 import Utility.Hooks;
 import Utility.SmartWait;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;

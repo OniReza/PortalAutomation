@@ -68,7 +68,7 @@ public class InstanceRewardsPage extends CommonPageMethods {
     }
     public void ClickInstanceBtn()
     {
-        click(btnInstanceRewards);
+       btnInstanceRewards.click();
     }
 
     public void SelectCard()throws InterruptedException
@@ -83,7 +83,7 @@ public class InstanceRewardsPage extends CommonPageMethods {
     }
     public void selectCardFromList()
     {
-        click(selectCardBtn);
+        selectCardBtn.click();
     }
     public Boolean isPaymentMethodAvailable() {
         return AssertRewardPage.isDisplayed();
@@ -103,7 +103,7 @@ public class InstanceRewardsPage extends CommonPageMethods {
     }
 
     public void clickRedeemBtn() {
-      btnRedeem.click();;
+        btnRedeem.click();
     }
 
     public void clickOrderBtn() {

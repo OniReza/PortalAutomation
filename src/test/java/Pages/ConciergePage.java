@@ -10,10 +10,8 @@ public class ConciergePage extends CommonPageMethods {
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/div/div[1]/div/div/div[2]/ul[1]/div[6]")
     public WebElement btnConcierge;
-
     @FindBy(xpath = "//textarea[@placeholder='Type your message here...']")
     public WebElement inputConciergeChat;
-
     @FindBy(xpath = "/html/body/div[1]/div/div/div/div/div[2]/div/div/div/div[1]/div/div/div/div/span[1]")
     public WebElement popup;
 

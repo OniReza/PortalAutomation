@@ -32,9 +32,9 @@ import static org.hamcrest.Matchers.equalTo;
 public class SmartWait extends AutomationBase {
 
 
-
     //This method allows to wait until the specific page load
     public  void waitUntilPageIsLoaded (int timer)
+
     {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>()
         {
@@ -123,6 +123,4 @@ public class SmartWait extends AutomationBase {
             Assert.fail("Timeout waiting for the condition to be met:" + error.getMessage());
         }
     }
-
-
 }

@@ -6,6 +6,8 @@ import base.AutomationBase;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
+import java.util.Map;
+
 
 /**
  * @author Muhemmet UYAR
@@ -13,8 +15,6 @@ import org.openqa.selenium.WebElement;
  */
 public class CommonPageMethods extends AutomationBase{
     SmartWait smartWait = new SmartWait();
-
-
 
     //This method allows you to click with wait for the element available.
     public void click (WebElement webElement)
